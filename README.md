@@ -12,7 +12,7 @@ However, with support for encryption and fully web based room configuration and 
 Planned
 =======
 
-* Asymmetrical encryption, so that users can chat "activate encryption" instead of having to share a password
+* Asymmetrical encryption, so that users can just "activate encryption" instead of having to share a password
 * Support for more commands
 * GUI features
 
