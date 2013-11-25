@@ -1,0 +1,258 @@
+
+#candy {
+	background-color: #ccc;
+	color: #333;
+}
+
+a {
+	color: #333;
+}
+
+#chat-tabs li {
+	border-right: 1px solid #aaa;
+}
+
+#chat-tabs li a {
+	background-color: #ddd;
+	color: #666;
+}
+
+#chat-tabs li.active a {
+	background-color: white;
+	color: black;
+}
+
+#chat-tabs li a.transition {
+	background: url(img/tab-transitions.png) repeat-y left;
+}
+
+#chat-tabs li a.close {
+	background-color: transparent;
+	color: #999;
+}
+
+#chat-tabs li.active a.transition {
+	color: gray;
+	background: url(img/tab-transitions.png) repeat-y -50px;
+}
+
+#chat-tabs li a.close:hover, #chat-tabs li.active a.close:hover {
+	color: black;
+}
+
+#chat-tabs li .unread {
+	color: white;
+	background-color: #9b1414;
+}
+
+#chat-tabs li.offline a.label {
+	text-decoration: line-through;
+}
+
+#chat-toolbar {
+	color: #666;
+	width: 200px;
+	border-top: 1px solid #aaa;
+	background-color: #d9d9d9;
+}
+
+#chat-toolbar .context {
+	background-image: url(img/action/settings.png);
+	display: none;
+}
+
+#chat-autoscroll-control {
+	background-image: url(img/action/autoscroll-off.png);
+}
+
+#chat-autoscroll-control.checked {
+	background-image: url(img/action/autoscroll-on.png);
+}
+
+#chat-statusmessage-control {
+	background: url(img/action/statusmessage-off.png);
+}
+
+#chat-statusmessage-control.checked {
+	background: url(img/action/statusmessage-on.png);
+}
+
+#chat-toolbar .usercount {
+	background-image: url(img/action/usercount.png);
+}
+
+.usercount span {
+	background-color: #ccc;
+}
+
+.roster-pane .user {
+	color: #666;
+	background-color: #ddd;
+}
+	
+.roster-pane .user:hover {
+	background-color: #eee;
+}
+
+.roster-pane .user.me:hover {
+	background-color: #ddd;
+}
+
+.roster-pane li.role-moderator {
+	background-image: url(img/roster/role-moderator.png);
+	display: block;
+}
+
+.roster-pane li.affiliation-owner {
+	background-image: url(img/roster/affiliation-owner.png);
+	display: block;
+}
+
+.roster-pane li.ignore {
+	background-image: url(img/roster/ignore.png);
+}
+
+.roster-pane li.context {
+	background-image: url(img/action/menu.png);
+}
+
+.roster-pane li.context:hover {
+	background-color: #ccc;
+}
+
+.message-pane dd {
+	font-size: 15px;
+}
+.message-pane dd span a {
+	font-size: 13px;
+}
+
+.message-pane dt {
+	width: 55px;
+	color: #888;
+	padding-top: 6px;
+}
+
+.message-pane .subject {
+	color: #a00;
+}
+
+.message-pane .adminmessage {
+	color: #a00;
+}
+
+.message-pane .infomessage {
+	color: #888;
+}
+
+.message-form-wrapper {
+	border-top: 1px solid #ccc;
+	background-color: #f2f2f2;
+}
+
+.message-form input {
+	background-color: #f2f2f2;
+	color: black;
+}
+
+.message-form input.submit {
+	background-color: #ccc;
+	color: #666;
+}
+
+#tooltip {
+	color: white;
+	background: url(img/tooltip-arrows.gif) no-repeat left bottom;
+}
+
+#tooltip div {
+	background-color: black;
+}
+
+#context-menu {
+	background: url(img/context-arrows.gif) no-repeat left bottom;
+}
+
+#context-menu ul {
+	background-color: black;
+	color: white;
+}
+
+#context-menu li:hover {
+	background-color: #666;
+}
+
+#context-menu .private {
+	background-image: url(img/action/private.png);
+}
+
+#context-menu .ignore {
+	background-image: url(img/action/ignore.png);
+}
+
+#context-menu .unignore {
+	background-image: url(img/action/unignore.png);
+}
+
+#context-menu .kick {
+	background-image: url(img/action/kick.png);
+}
+
+#context-menu .ban {
+	background-image: url(img/action/ban.png);
+}
+
+#context-menu .subject {
+	background-image: url(img/action/subject.png);
+}
+
+#context-menu .emoticons:hover {
+	background-color: transparent;
+}
+
+#chat-modal {
+	background: url(img/modal-bg.png);
+	color: white;
+}
+
+#chat-modal-overlay {
+	background-image: url(img/overlay.png);
+}
+
+#chat-modal .close {
+	color: white;
+}
+
+#chat-modal .close:hover {
+	background-color: #333;
+}
+
+
+/* ROOM CONFIGURATION PANEL */
+
+div.muc_room_configuration{
+	background-color: white;
+	color: black;
+}
+h1.muc_room_configuration {
+
+}
+ul.muc_room_configuration ul{
+	
+}
+li.muc_room_configuration li{
+	
+}
+span.muc_room_configuration span{
+	
+}
+input[type=text].muc_room_configuration{
+	
+}
+input[type=button].muc_room_configuration{
+	
+}
+input[type=button].muc_room_configuration{
+	
+}
+

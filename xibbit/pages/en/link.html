@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Create an autojoin link</title>
+	<link rel="stylesheet" type="text/css" href="../../css/default.css">
+	<script src="../../js/create.js"></script>
+</head>
+<body>
+	<div class="xmpp webclient">
+		<p class="xmpp webclient">
+			If you want you and other users to be able to join your room(s) 
+			by just clicking a link, you
+			can fill out the form below and create a join link that will allow everyone
+			to join your room.
+			<br>
+			Please note that users usually need an account at the server you are using to
+			join, or at least a XMPP account at another server if the server you've chosen
+			supports users from different servers. So if most of your users don't have a
+			XMPP account yet (or none at this server), you should give them a link to the
+			servers homepage so they can register. 
+			<br>
+			When you allow non-registered users to connect, please only specify registered
+			(persistent) rooms for joining: They cannot join non-persistent rooms on most servers. Not
+			all servers allow anonymous (non-registered) connections, so choose one that
+			does.
+			<br>
+			If users can connect unregistered, they will just have to enter a nickname
+			to chat. If they connect registered, they will see a login form and have to
+			enter their JID/ username ("user@server") and their password to chat. If you
+			are using a server that allows non-registered users to chat, you could create
+			one link that allows unregistered connection (link for guests) and another link
+			that doesn't do so (for registered users).
+		</p>
+		<ul class="xmpp webclient" id="create">
+			<li class="xmpp webclient"><label class="xmpp webclient" for="xmpp_lang">Language:</label></li>
+			<li class="xmpp webclient">
+				<select class="xmpp webclient" id="xmpp_lang">
+					<option class="xmpp webclient" value="en">en</option>
+					<option class="xmpp webclient" value="de">de</option>
+					<option class="xmpp webclient" value="fr">fr</option>
+					<option class="xmpp webclient" value="es">es</option>
+					<option class="xmpp webclient" value="nl">nl</option>
+					<option class="xmpp webclient" value="cn">cn</option>
+					<option class="xmpp webclient" value="ja">ja</option>
+				</select>
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_candy_style">Style:</label>
+			</li>
+			<li class="xmpp webclient" id="xmpp_candy_style">
+				<p class="xmpp webclient" style="font-size: 85%;">
+					Select a style from the list below ...
+				</p>
+				<select class="xmpp webclient" id="xmpp_candy_style_select">
+					<option class="xmpp webclient" value="./themes/light.css">light</option>
+					<option class="xmpp webclient" value="./themes/dark.css">dark</option>
+				</select>
+				<p class="xmpp webclient" style="font-size: 85%;">
+					... or enter an URL (valid URL to a CSS-file, a Candy-Chat style) below (if 
+					you enter anything below, this URL will be used, no matter what is
+					selected above). Leave the field empty to use one of the styles on the list.
+					If you want to write a style, use <a class="xmpp webclient" href="./themes/light.css" target="_blank">
+					light.css</a> as an example. The browser console in Firefox and Chrome
+					allows you to inspect, change and create styles in browser easily.
+				</p>
+				<input type="text" class="xmpp webclient" id="xmpp_candy_style_fileurl">
+			</li>
+			
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_host">Host (example: jappix.com)</label>
+			</li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_host">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_bind">HTTP-Bind (example: https://bind.jappix.com)</label>
+			</li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_bind">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_muc">MUC (example: muc.jappix.com)</label>
+		    </li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_muc">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_isanon">Allow non-registered users to chat ("1", "true" or "yes", everything else no):</label>
+			<p class="xmpp webclient" style="font-size: 85%;">
+				If you allow non-registered users to connect, please only specify registered
+				rooms for joining: They cannot join non-persistent rooms on most servers.
+			</p>
+			</li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_isanon">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_anon">Anonymous (example: anonymous.jappix.com, only needed if non-registered users are allowed to chat):</label>
+			</li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_anon">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_join">Rooms to join (at least one, seperate by comma, like "room 1, room2, room3"):</label>
+			</li>
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_join">
+			</li>
+			
+			<li class="xmpp webclient">
+				<label class="xmpp webclient" for="xmpp_enc_pass">Encryption password (all messages in the window will be encrypted using this password):</label>
+			<p class="xmpp webclient" style="font-size: 85%;">
+				If you specify an encryption password, all messages in the window opened using the
+				link will be automatically encrypted using the password.<br>
+				As the password is part of the link you'll receive below, all messages (groupchat and
+				private chats) will only be readable for those who have the link.<br>
+				This has advantages concerning security (only who has the password/ link will be able
+				to read the messages, not even the server, as the password is never sent anywhere), 
+				but disadvantages concerning compatibility
+				(users with other XMPP clients will not be able to participate in chat as they
+				cannot decrypt the messages they receive). So only use this if you really need it.
+				To use no password, just leave the field below empty.
+				<br>
+				Make sure the encryption password is never the same as a room password or a login
+				password.
+				<br>
+				Please not that nicknames, room names and subjects, 
+				commands etc. are not encrypted - only the
+				actual messages are.
+			</p>
+			</li>
+			
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_enc_pass">
+			</li>
+			
+			<li class="xmpp webclient">
+				<button class="xmpp webclient" onclick="makelink()">Make Link</button>
+			</li>
+			
+			<li class="xmpp webclient">
+				<input type="text" class="xmpp webclient" id="xmpp_link">
+			</li>
+		</ul>
+	</div>
+</body>

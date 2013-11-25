@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servers>
+	<server>
+		<host>localhost</host>
+		<bind>http://localhost:5280/http-bind/</bind>
+		<muc>conference.localhost</muc>
+		<anon></anon>
+	</server>
+	<server>
+		<host>jappix.com</host>
+		<bind>https://bind.jappix.com/</bind>
+		<muc>muc.jappix.com</muc>
+		<anon>anonymous.jappix.com</anon>
+	</server>
+	<server>
+		<host>xmpp.kz</host>
+		<bind>http://xmpp.kz/http-bind/</bind>
+		<muc>conference.xmpp.kz</muc>
+		<anon></anon>
+	</server>
+	<server>
+		<host>lsd-25.ru</host>
+		<bind>https://lsd-25.ru:5280/http-bind/</bind>
+		<muc>conference.lsd-25.ru</muc>
+		<anon></anon>
+	</server>
+</servers>

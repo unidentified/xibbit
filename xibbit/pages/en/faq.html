@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>FAQ</title>
+		<link rel="stylesheet" type="text/css" href="../../css/default.css">
+	</head>
+	<body>
+		<div class="xmpp webclient">
+			<h1 class="xmpp webclient">FAQ</h1>
+			<ul class="xmpp webclient">
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_xmpp" target="_self">What is XMPP?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_website" target="_self">How does this website work?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_muc" target="_self">How does a XMPP groupchat work?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_commands" target="_self">What commands can I use?</a>
+				</li>
+			</ul>
+			<h2 class="xmpp webclient" id="faq_xmpp">What is XMPP?</h2>
+			<p class="xmpp webclient">
+				XMPP is a protocol for instant messaging and groupchat
+				(MUC - multi user chat) - similar to what
+				you know from ICQ, Google Talk or Skype. "Protocol" means that "XMPP" just 
+				defines how chat works and what it does (i.e. how messages are sent, what
+				functions are there etc.). There are a lot of XMPP servers, i.e. chat servers 
+				that work as described for XMPP, and a lot of XMPP clients which allow users
+				to chat with others after registering at a server.
+			</p>
+			<p class="xmpp webclient">
+				There are many XMPP servers, and a lot of them allow users to register for
+				free. Many of them support groupchat (not every server supports any possible
+				feature). Most servers have a homepage which allows users to register, only a 
+				few allow registration via client. 
+			</p>
+			<p class="xmpp webclient">
+				XMPP clients are instant messaging programs which can either be installed on
+				a users computer or smartphone, or run on a web page (the latter only works if
+				the servers supports access via webpages, but a quite a number of servers do). 
+				<br>
+				XMPP clients are either multimessengers like Pidgin which as well support XMPP,
+				or dedicated XMPP clients (like, for example, Psi, some mobile apps, or 
+				webbased clients like converseJS or iJab).
+			</p>
+			<p class="xmpp webclient">
+				Users on a XMPP server are identified via a JID (Jabber ID - Jabber is used
+				synonymously for XMPP). After registering, you have a JID in the form username@server,
+				which you can use to login. The login form on this page takes your JID in username
+				fields.
+				<br>
+				XMPP groupchat rooms are identified via a JID as well - this is in the form of 
+				roomname@groupchatserver.
+			</p>
+			<h2 class="xmpp webclient" id="faq_website"></h2>
+			<p class="xmpp webclient">
+				This website works as a <strong class="xmpp webclient">XMPP client for
+				groupchats</strong>. It works with any XMPP server which supports XMPP MUC
+				(multi user chat) and clients that run on web pages.
+			</p>
+			<p class="xmpp webclient">
+				This page allows you to login and join groupchats using our 
+				<a class="xmpp webclient" href="../../chat.html#?lang=en" target="_blank">login form</a>
+				(please note that you should enter your JID as username in login forms that
+				ask for username and password).
+				<br>
+				This page as well allows you to create <a class="xmpp webclient" href="./link.html" target="_blank">
+				autojoin links</a> which already define the
+				server and rooms, so that who clicks the link is greeted with a login form that
+				asks for JID and password, or only for a nickname if the link is for unregistered 
+				joining.
+			</p>
+			<p class="xmpp webclient">
+				XMPP multiuser chatrooms can be used and administrated via this page.
+			</p>
+			<h2 class="xmpp webclient" id="faq_muc">How does a XMPP groupchat work?</h2>
+			<p class="xmpp webclient">
+				XMPP groupchat rooms are created once a (registered) user joins a room that
+				doesn't yet exist. This makes the user owner. Such a room exists as long as 
+				there are occupants in it, and after everyone left, the room and it's settings
+				disappear. <br>
+				To register a room, the user who joined it and is owner has to configure it and
+				make it persistent.
+			</p>
+			<p class="xmpp webclient">
+				Users in a room have an affiliation as well as a role. An affiliation is permanent - 
+				something like owner, admin, member, none (normal user) or outcast (banned). The
+				servers saves it and it stays as long as the room persists. A role, on the other hand,
+				exists as long as a user is occupant of a room. Roles are those of participant or 
+				moderator. If a role is set to none, a user is kicked. Owners and admins are moderator
+				by default, while other users can be given moderator role by an owner or admin - this
+				is a temporary moderator role, as it is lost when leaving the room.
+			</p>
+			<p class="xmpp webclient">
+				Admins can kick and ban and set users as members. Owners can do the same as admins,
+				but also configure the room (register or destroy it, set the maximum number of 
+				occupants, set room passwords etc.) and set other users as owners or admins. 
+				Temporary moderators can kick users (and set subjects and such, in a lot of rooms,
+				any user can).
+			</p>
+			<p class="xmpp webclient">
+				Usually, any user can join a room. However, a room can be password protected or members
+				only. A password protected room can only be joined by those who have the room password,
+				while a members only room can only be joined by people who were set as a member by an
+				owner or admin (owners and admins can give users member status using their JID). 
+			</p>
+			<p class="xmpp webclient">
+				To learn more about XMPP multi user chat and room administration, take a look at 
+				<a class="xmpp webclient" target="_blank" href="./xmpp.html">this website's XMPP groupchat
+				informational page</a>.
+			</p>
+			<h2 class="xmpp webclient" id="faq_commands">What commands can I use?</h2>
+			<p class="xmpp webclient">
+				The client on this page supports a set of a few simple commands you can 
+				use to join and leave rooms, open private chat, list all users in room or
+				ignore and unignore a user. 
+				<br>
+				It supports administrative commands as well.
+			</p>
+			<p class="xmpp webclient">
+				Please refer to the <a class="xmpp webclient" target="_blank" href="./commands.html">
+				command overview</a> to get a list of all supported commands.
+			</p>
+		</div>
+	</body>
+</html>

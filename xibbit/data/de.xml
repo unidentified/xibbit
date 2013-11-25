@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lang>
+	<divlogin>
+		<button class="xmpp webclient login optional" id="xmpp_webclient_login_hide_optional">Server aus Liste wählen</button>
+		<label class="xmpp webclient login" id="xmpp_webclient_login_servers_label" for="xmpp_webclient_login_servers">Server aus Liste wählen:</label> 
+		<select class="xmpp webclient login" id="xmpp_webclient_login_servers">
+		</select>
+		<button class="xmpp webclient login" id="xmpp_webclient_enter_serverdetails">... oder Serverdetails selbst eingeben</button>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_host">Host (Beispiel: jappix.com):</label>
+		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_host"></input>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_http">HTTP-Bind (Beispiel: https://bind.jappix.com/):</label>
+		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_http"></input>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_muc">MUC (Beispiel: muc.jappix.com, oft conference. oder muc. gefolgt von der Hostadresse):</label>
+		<input class="xmpp webclient login optional"  id="xmpp_webclient_login_optional_muc"></input>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_anon">Anonym (ermöglicht unregistriertes Anmelden, Beispiel: anonymous.jappix.com):</label>
+		<input class="xmpp webclient login optional"  id="xmpp_webclient_login_optional_anon"></input>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_jid">JID (Username):</label>
+		<input class="xmpp webclient login" type="text" id="xmpp_webclient_login_jid"></input>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_pass">Passwort (beim unregistrierten Verbinden Feld leer lassen und als Usernamen einen beliebigen Nick eingeben **):</label>
+		<input class="xmpp webclient login" type="password" id="xmpp_webclient_login_pass"></input>
+		<label class="xmpp webclient login" id="xmpp_webclient_login_languages_label" for="xmpp_webclient_login_languages">Sprache:</label>
+		<select class="xmpp webclient login" id="xmpp_webclient_login_languages">
+		</select>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_rooms">Räume (werden automatisch betreten - mind. 1 angeben, Beispiel: raum1, raum2 ,raum3 - mit Komma trennen: </label>
+		<input class="xmpp webclient login" id="xmpp_webclient_login_rooms" value=""></input>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_encpass">Verschlüsselungspasswort (leer lassen für keines) *:</label>
+		<input class="xmpp webclient login" id="xmpp_webclient_login_encpass" value=""></input>
+		<label class="xmpp webclient login" for="xmpp_webclient_candy_style">Style:</label>
+		<select class="xmpp webclient login" id="xmpp_webclient_candy_style">
+			<option class="xmpp webclient login" value="./themes/light.css">Light</option>
+			<option class="xmpp webclient login" value="./themes/dark.css">Dark</option>
+		</select>
+		<button class="xmpp webclient login" id="xmpp_webclient_login_button">Verbinden</button>
+		<p class="xmpp webclient login notice">
+			Klicke  <a href="./pages/en/xmpp.html" target="_blank">hier</a> , um einen 
+			<a href="./pages/en/xmpp.html" target="_blank">eigenen Chatraum</a> und einen 
+			<a href="./pages/en/link.html" target="_blank">Link zum automatischen Betreten</a> 
+			zu erstellen. Solche Links funktionieren auch für Chats, die bereits
+			existieren und von anderen administriert werden. 
+		</p>
+		<p class="xmpp webclient login notice">
+			<span style="display: block;" class="xmpp webclient login notice">
+			* [ ALLE Nachrichten in diesem Fenster, Gruppen- und Privatchats, werden 
+			mit dem Verschlüsselungspasswort
+			ent- und verschlüsselt. D.h., alle Teilnehmer müssen das selbe Passwort verwenden, um 
+			kommunizieren zu können, falls ein Verschlüsselungspasswort verwendet wird. 
+			</span>
+			<span style="display: block;" class="xmpp webclient login notice">
+			Beim Erstellen <a href="./pages/en/link.html" target="_blank">eines Direktlinks für einen Raum</a>
+			muss das Verschlüsselungspasswort angegeben werden. Es ist dann im Link enthalten.
+			</span>
+			<span style="display: block;" class="xmpp webclient login notice">
+		    Es "muss" kein Verschlüsselungspasswort genutzt werden, aber es kann manchmal die Sicherheit
+		    deutlich erhöhen: Nur wer das Passwort kennt, kann die Nachrichten lesen, noch nicht einmal der
+		    Server (dem das Passwort nie mitgeteilt wird). 
+		    </span>
+		    <span style="display: block;" class="xmpp webclient login notice">
+		    Die Verwendung eines solchen Passworts setzt allerdings voraus, dass allen
+		    Teilnehmern das Passwort bzw. der das Passwort enthaltende Link bekannt ist, und dass Passwort bzw.
+		    Link sicher ausgetauscht werden können. Außerdem müssen alle Teilnehmer ein Chatprogramm
+		    verwenden, das die Verschlüsselung mit dem Passwort unterstützt - momentan ist das nur diese
+		    Seite. Unverschlüsselte Nachrichten werden Nutzern mit Verschlüsselungspasswort einfach nicht
+		    angezeigt, und Nutzer, deren Client die Verschlüsselung nicht unterstützt, sehen sinnlosen
+		    verschlüsselten Text statt der Nachrichten. ]
+			</span>
+		</p>
+		<p class="xmpp webclient login notice">
+			<span style="display: block;" class="xmpp webclient login notice">
+			** [ 
+			Bei manchen Servern kann man unregistriert chatten. Beim Wählen eines Server aus der Serverliste
+			ist das durch das "(+a)" hinterm Servernamen zu erkennen. Das Passwortfeld muss zum Verbinden
+			dann leer bleiben, der Username ist ein Nickname der Wahl. 
+			</span>
+			<span style="display: block;" class="xmpp webclient login notice">
+			Beim Eingeben von Serverdetails von Hand muss fürs unregistrierte Chatten die Adresse des
+			Servers für "anonyme" (unregistrierte) Verbindungen angegeben werden (z.B. anonymous.jappix.com
+			für jappix.com als Server). Beim Verbinden mit registriertem Account kann dieses Feld leer bleiben. ]
+			</span>
+		</p>
+		<p class="xmpp webclient login notice">
+			Diese Seite nutzt (einen Fork von) <a href="http://candy-chat.github.io/candy" target="_blank">Candy Chat</a>
+			für Multiuserchat über XMPP.
+		</p>
+	</divlogin>
+</lang>

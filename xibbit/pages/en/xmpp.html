@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>XMPP Multi User Chat</title>
+		<link rel="stylesheet" type="text/css" href="../../css/default.css">
+	</head>
+	<body>
+		<div class="xmpp webclient">
+			<p class="xmpp webclient">
+				This page provides some information on what XMPP (Jabber - the words
+				"XMPP" and "Jabber" are usually used synonymously)
+				is, and how to use it for multi user chatrooms. It also
+				explains how to administrate XMPP groupchats with this page as a
+				client.
+			</p>
+			<p class="xmpp webclient">
+				This tutorial especially focuses on people who want to
+				understand how XMPP multi user chats work or administrate
+			    their own chatroom. <br>
+				If you are not interested in this, you
+				 might just read the <a href="./faq.html" target="_blank">FAQ</a>
+				and the <a href="./commands.html" target="_blank">command overview</a>
+				(which are useful for admins as well, of course).
+			</p>
+			<ul class="xmpp webclient">
+				<li class="xmpp webclient">
+					<h2 class="xmpp webclient">
+							<a class="xmpp webclient" href="#whatis_xmpp" target="_self">
+								What is XMPP?
+							</a>
+					</h2>
+					<ul class="xmpp webclient">
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#whatis_xmpp_users" target="_self">
+								Users in XMPP
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xmpp webclient">
+					<h2 class="xmpp webclient">
+							<a class="xmpp webclient" href="#whatis_xmpp_muc" target="_self">
+								What is XMPP MUC (Multi User Chat)?
+							</a>
+					</h2>
+				</li>
+				<li class="xmpp webclient">
+					<h2 class="xmpp webclient">
+							<a class="xmpp webclient" href="#rooms" target="_self">
+								Rooms, affiliation and roles
+							</a>
+					</h2>
+					<ul class="xmpp webclient">
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#rooms_roles" target="_self">
+								Roles: Participants and Moderators
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#rooms_aff" target="_self">
+								Affiliatons: Owners, Admins and Members
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#rooms_conf" target="_self">
+								Room configuration
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="xmpp webclient">
+					<h2 class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin" target="_self">
+								Administrating a chatroom using this client
+							</a>
+					</h2>
+					<ul class="xmpp webclient">
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin_conf" target="_self">
+								Configuring the room
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin_aff" target="_self">
+								Setting affiliations
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin_roles" target="_self">
+								Setting roles
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin_kickban" target="_self">
+								Kick and ban
+							</a>
+						</li>
+						<li class="xmpp webclient">
+							<a class="xmpp webclient" href="#admin_list" target="_self">
+								Using the /list command
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h2 class="xmpp webclient" id="whatis_xmpp">What is XMPP (Jabber)?</h2>
+			<p class="xmpp webclient">
+				XMPP is an instant messaging protocol. This means that there are XMPP
+				servers, and with a XMPP client, you can use a XMPP account you registered
+				at a XMPP server. Usually registration happens on the server provider's 
+				homepage.
+			</p>
+			<p class="xmpp webclient">
+				XMPP has similar features to ICQ, Google Talk (which is based on XMPP),
+				Facebook chat or Skype. It supports usual instant messaging as well as 
+				groupchats. There are several well known XMPP servers which allow users to
+				register for free, such as jappix.com or jabber.org. Many 
+				services allow you to chat with XMPP users registered at another XMPP server.
+			</p>
+			<p class="xmpp webclient">
+				Most instant messengers (like, for example, Pidgin or Miranda) can be used
+				for XMPP as well, and there are a lot of other XMPP clients. If you
+				use XMPP for instant messaging, you most likely want to use some instant 
+				messenger.
+			</p>
+			<p class="xmpp webclient">
+				Some XMPP servers support web access, the so-called HTTP binding. 
+				This allows XMPP clients
+				to simply run on web pages. The page is loaded in browser, and the program
+				(XMPP client) executed directly in browser. No download or installation is
+				required, and the website's resources aren't used up for chat traffic. 
+				<br>
+				This technology makes integrating chats (chat rooms, support chats, even
+				fully featured instant messengers) on
+				web pages very easy.
+			</p>
+			<p class="xmpp webclient">
+				The features of instant messaging, groupchat and web access make XMPP a 
+				very flexible protocol that - once you found a server that meets your needs - 
+				runs about everywhere.
+			</p>
+			<h3 class="xmpp webclient" id="whatis_xmpp_users">Users in XMPP</h3>
+			<p class="xmpp webclient">
+				A user is identified by a "Jabber-ID", usually abbreviated as "JID" or
+				"Jid". This ID has the form of user@server, i.e. if the username is
+				user1 and the server is jappix.com, the JID of user1 would be user1@jappix.com.
+			</p>
+			<p class="xmpp webclient">
+				Usually, the JID is used to identify a user in XMPP. A user logs in with
+				their JID and password, and addresses their contacts using their JIDs. A JID
+				is in XMPP what a mail address is for mail.
+			</p>
+			<h2 class="xmpp webclient" id="whatis_xmpp_muc">What is XMPP MUC (Multi User Chat)?</h2>
+			<p class="xmpp webclient">
+				XMPP supports multi user chat (MUC) with a lot of features. Rooms are created
+				by simply joining them. So if you, as a registered user, join a room that doesn't
+				exist yet, the XMPP server will simply create it - the first one who joined, you
+				in this case, is owner and admin. Once all users have left the room, it is automatically
+				destroyed. 
+			</p>
+			<p class="xmpp webclient">
+				To <strong class="xmpp webclient">register</strong> 
+				a MUC room, so that is persists when it is empty, 
+				you need to configure the room. In XMPP,
+				registering a room is called making the room 
+				<strong class="xmpp webclient">persistent</strong>.
+				<br>
+				After you've made the room persistent (XMPP clients usually provide graphical
+				ways of configuring a room), the room is permanently registered at the XMPP
+				server and you are owner and admin.
+			</p>
+			<p class="xmpp webclient">
+				Owners of persistent as well as unpersistent rooms can set other users as owners,
+				administrators, moderators or members. Password protection for rooms is supported
+				as well as members only rooms. In a members only rooms, the owner and admins have 
+				to assign member status to other users based on their real JID before these others
+				are able to join. Password protected rooms require a password to join them. 
+			</p>
+			<p class="xmpp webclient">
+				Usually, the room owner configures the room (persistent or not, members only or not,
+				password or not, maximum numbers of users and such), and then manually adds or 
+				removes admins, members or assigns temporary moderator status to users. 
+			</p>
+			<h2 class="xmpp webclient" id="rooms">Rooms, affiliations and roles</h2>
+			<p class="xmpp webclient">
+				In XMPP, a room has a JID as well. It is in the form of room@mucserver, for
+				example room1@muc.jappix.com, if room1 is the roomname and muc.jappix.com is the
+				address of jappix' MUC service.
+				<br>
+				This JID is valid as long as the room exists. Rooms which do not exists
+				are created once a (usually registered) user tries to join the. The first user
+				who joins is owner if the room is not registered (not persistent). This first
+				user can register the room (make it persistent), of course, but doesn't have
+				to. 
+			</p>
+			<p class="xmpp webclient">
+				While in the room, occupants of a MUC room have a temporary JID which is based
+				on their nickname in chat and on the JID of the room. Such a JID is in the form
+				of room@mucserver/nick, i.e. for example room1@muc.jappix.com/myusername.
+				<br>
+				Dependent on the room configuration, but in most cases, only moderators can see
+				the real JID of a user (i.e. user@server). 
+			</p>
+			<h3 class="xmpp webclient" id="rooms_roles">Roles: Participants and moderators</h3>
+			<p class="xmpp webclient">
+				(Current) occupants of a room have a <strong class="xmpp webclient">role</strong>. 
+				<br>
+				A user who is just a normal user usually has
+				the role of a <strong class="xmpp webclient">participant</strong>. 
+				A user with moderator rights has to role of a <strong class="xmpp webclient">moderator</strong>. 
+				A user who is not in the room has the role <strong class="xmpp webclient">none</strong> - 
+				moderators can kick a user by setting their role to "none".
+				<br>
+				Roles are <strong class="xmpp webclient">not persistent</strong>. 
+				They exist as long as a user is in chat. If an owner sets a users role to
+				moderator, this user is a temporary moderator - once they leave the room, the 
+				moderator rights are lost.
+			</p>
+			<h3 class="xmpp webclient" id="rooms_aff">Affiliations: Owners, admins, members and outcasts</h3>
+			<p class="xmpp webclient">
+				The <strong class="xmpp webclient">affiliation</strong> of a user to a room
+				is <strong class="xmpp webclient">persistent</strong> for as long as the room 
+				persists. 
+				<br>
+				Users can be <strong class="xmpp webclient">owner</strong>, 
+				<strong class="xmpp webclient">admin</strong>, <strong class="xmpp webclient">member</strong>,
+				<strong class="xmpp webclient">outcast</strong> (banned) or have no affiliation, 
+				i.e. <strong class="xmpp webclient">none</strong> (normal users). 
+				<br>
+				Owners can set admins and owners. Admins and owners can ban users (set their
+				affiliation to outcast), set users as members or their role to moderator. 
+				MUC rooms can have multiple owners.
+			</p>
+			<p class="xmpp webclient">
+				Owners and admins are automatically assigned the role of a moderator on joining the
+				chat. Outcast are banned - they cannot join the room unless someone sets their
+				affiliation to something else.
+			</p>
+			<h3 class="xmpp webclient" id="rooms_conf">Room configuration</h3>
+			<p class="xmpp webclient">
+				Owners can configure the room. The server sends a configuration form
+				to a user, which most clients present graphically, and which is then filled by the
+				owner. It usually consists of some text fields, checkboxes and dropdowns.
+			</p>
+			<p class="xmpp webclient">
+				To register a MUC room, a (registered) user must join a not yet existent 
+				room as the currently first user. This results in the room being automatically 
+				created by the server, and the user being owner. If the room now is not 
+				configured and the setting for making the room 
+				<strong class="xmpp webclient">persistent</strong> is not set, the room will be
+				automatically destroyed again once all occupants have left. So to register a 
+				room, the owner needs to configure the room and set it as persistent.
+			</p>
+			<p class="xmpp webclient">
+				Most servers have sensible defaults, so don't change anything you don't need or
+				understand. You only need to make settings you need, for example set chat history
+				to none (if there's a setting for this) or set a maximum number of 
+				occupants.
+				<br>
+				When it comes to privacy related settings, think whether your chat needs to be
+				publically listed (not sensible if you don't want visitors who just looked at the
+				servers room list and joined somewhere), and whether 
+				the participant list needs to be public (this often is the
+				default, and not such a good idea about the same as often). Chat history (a user
+				who joins for example sees the last 20 messages, or the messages from  the last
+				hour or such in chat) is not needed most times. 
+			</p>
+			<h4 class="xmpp webclient">Restricting access</h4>
+			<p class="xmpp webclient">
+				By default, everyone is allowed to join a MUC room, as long as they are not banned.
+				However, there are ways to restrict joining to certain users: 
+				<strong class="xmpp webclient">members only rooms</strong> and 
+				<strong class="xmpp webclient">password protected rooms</strong>.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient">Members only rooms</strong> require owners
+				and admins (these have member status anyway) to know users real JID's and
+				set their affiliation to "member" before these users are able to join. 
+				Setting a room as members only in configuration makes sense for small rooms
+				where manually setting users as members is sensible and possible.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient">Password protected rooms</strong> require a 
+				password on joining them. This is sensible for rooms where all users can
+				share a password. 
+			</p>
+			<h2 class="xmpp webclient" id="admin">Administrating a chatroom using this client</h2>
+			<p class="xmpp webclient">
+				This website works as a XMPP clients for groupchats. It supports most relevant
+				administrative options as well. 
+				<br>
+				To create a room, just join a room that doesn't exist yet - as described above. 
+				Then you can proceed to configure it.
+			</p>
+			<h3 class="xmpp webclient" id="admin_conf">Configuring the room</h3>
+			<p class="xmpp webclient">
+				To configure the room, just type <code class="xmpp webclient">/config</code> - 
+				this command leads to nothing if you're not owner, and, if you are owner, opens
+				a configuration form. This is delivered by the server and only rendered on this
+				web page so you can use it comfortably. 
+				<br>
+				Make the room persistent to register it, and make other settings as they
+				are sensible.
+			</p>
+			<h3 class="xmpp webclient" id="admin_aff">Setting affiliations</h3>
+			<p class="xmpp webclient">
+				Affilitions are set by owners using the <code class="xmpp webclient">/set</code>
+				command. 
+				<br>
+				The syntax is:
+			</p>
+			<p class="xmpp webclient">
+				<code class="xmpp webclient">/set affiliation {owner | admin | member | none | outcast} user</code>
+			</p>
+			<p class="xmpp webclient">
+				The affiliation to set can either be owner, admin, member, none or outcast. "user"
+				is a placeholder for either a real JID or - if the user is currently present in the
+				room - a nickname.
+			</p>
+			<p class="xmpp webclient">
+				Please note: If you revoke someones administrator status by setting their affiliation to
+				none or member, you should set their role to participant as well if they are in the
+				room, as their moderator role otherwise stays as long as they leave the room - they 
+				couldn't any longer set affiliations, but still kick users.
+			</p>
+			<h3 class="xmpp webclient" id="admin_roles">Setting roles</h3>
+			<p class="xmpp webclient">
+				Roles - moderator, participant or none (kicked) - can be set using the
+				<code class="xmpp webclient">/set</code> command as well:
+			</p>
+			<p class="xmpp webclient">
+				<code class="xmpp webclient">/set role {moderator | participant | none} user</code>
+			</p>
+			<p class="xmpp webclient">
+				As an admin or owner, you can set a users role to moderator to give them 
+				temporary moderator rights, or take the moderator rights away again by setting 
+				their role to participant. Setting a users role to none kicks them.
+			</p>
+			<h3 class="xmpp webclient" id="admin_kickban">Kick and ban</h3>
+			<p class="xmpp webclient">
+				A kick is performed by either 
+				<code class="xmpp webclient">/set role none user</code> (where you 
+				fill in the users nickname for "user") or by the shorthand command
+				<code class="xmpp webclient">/kick user</code>.
+				<br>
+				A kick can be performed by temporary moderators, admins and owners. 
+			</p>
+			<p class="xmpp webclient">
+				A ban is performed by 
+				<code class="xmpp webclient">/set affiliation outcast user</code> or
+				the shorthand command <code class="xmpp webclient">/ban user</code>, 
+				where "user" can be the nickname of a present user, or the real JID of
+				someone not present. <br>
+				If your room is not members only, you can revoke a ban via
+				<code class="xmpp webclient">/set affiliation none userjid</code> 
+				or <code class="xmpp webclient">/unban userjid</code>, where
+				"userjid" is the users's real JID. For members only rooms, you should
+				use <code class="xmpp webclient">/set affiliation member userjid</code>.
+				"userjid" in this case is the user's real JID. 
+			</p>
+			<h3 class="xmpp webclient" id="admin_list">Using the /list command</h3>
+			<p class="xmpp webclient">
+				The <code class="xmpp webclient">/list</code> command allows owners
+				and admins to list users of different affiliation and role in a room. 
+			</p>
+			<p class="xmpp webclient">
+				<code class="xmpp webclient">/list {owner | admin | member | none | outcast | moderator | participant}</code>
+			</p>
+			<p class="xmpp webclient">
+				This command will list the real JID's as well, so that it is 
+				easy to for example get a banlist and unban a certain user by their
+				real JID (calling the banlist would work via 
+				<code class="xmpp webclient">/list outcast</code>).
+			</p>
+		</div>
+	</body>
+</html>

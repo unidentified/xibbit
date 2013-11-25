@@ -1,0 +1,28 @@
+
+/join room
+/part
+/query user
+/invite user
+/names
+/ignore user
+/unignore user
+
+--------------------------------------------------
+
+/config
+
+/set affiliation {owner | admin | member | none | outcast} user
+/set role {moderator | participant | none} user
+
+/kick user reason      ---> role "none"
+
+/ban user reason       ---> affiliation outcast
+/unban user reason     ---> invite them removes the ban
+
+/list admin           ---> ask for admin list
+/list owner           ---> ask for owners
+/list outcast    
+/list member
+
+/list {owner | admin | member | none | outcast | moderator | participant}
+

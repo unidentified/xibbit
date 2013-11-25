@@ -1,0 +1,89 @@
+
+div.xmpp.webclient{	
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: transparent;
+	color: black;
+	overflow: scroll;
+	
+	/**
+	 * Style it now ;)
+	 * */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	padding: 4%;
+    background-color: #333333;
+    color: #DCDCDC;
+}
+div.xmpp.webclient *{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	background-color: #333333;
+    color: #DCDCDC;
+}
+div.xmpp.webclient p, input, button, select, label{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	background-color: #333333;
+    color: #DCDCDC;
+}
+a.xmpp.webclient, div.xmpp.webclient a{
+	color: #686466;
+	text-decoration: underline;
+}
+a.xmpp.webclient:hover, div.xmpp.webclient a:hover{
+	text-decoration: none;
+}
+div.xmpp.webclient input, select, button{
+	margin-bottom: 1%;
+}
+div.xmpp.webclient label{
+	margin-bottom: 0.5%;
+}
+div.xmpp.webclient p{
+
+}
+input.xmpp.webclient, select.xmpp.webclient, label.xmpp.webclient, button.xmpp.webclient{
+	display: block;
+}
+#xmpp_webclient_login_languages, #xmpp_webclient_login_languages_label{
+	display: inline-block;
+}
+input.xmpp.webclient, select.xmpp.webclient{
+	border: 1px dotted white;
+	padding: 2px;
+	border-radius: 3px;
+	moz-border-radius: 3px;
+	webkit-border-radius: 3px;
+}
+button.xmpp.webclient{
+	border: 2px inset white;
+	padding: 2px;
+	border-radius: 3px;
+	moz-border-radius: 3px;
+	webkit-border-radius: 3px;
+}
+span.xmpp.webclient.strikethrough{
+	text-decoration: line-through;
+}
+.xmpp.webclient.login.optional{
+	display: none;
+}
+p.xmpp.webclient a{
+	text-decoration: underline;
+}
+div.xmpp.webclient #xmpp_link{
+	width: 80%;
+}
+ul.xmpp.webclient{
+	list-style-type: none;
+}
+code {
+	font-family: Lucida Console, Monaco, sans-serif !important;
+	padding-left: 8px;
+	padding-right: 8px;
+}
