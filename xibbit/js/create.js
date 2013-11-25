@@ -34,7 +34,8 @@ function makelink(){
 	                                     // not on a server but working
 	                                     // with local files
 	
-	var location_url = (window.location.href).replace('pages/link.html', 'chat.html');
+	var location_url = (window.location.href).replace('pages/en/link.html', 'chat.html');
+	location_url = location_url.replace('pages/de/link.html', 'chat.html');
 	if(location_url.indexOf('?')>0){
 		location_url = location_url.split('?')[0];
 	}
