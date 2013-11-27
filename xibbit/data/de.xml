@@ -27,8 +27,8 @@
 		<input class="xmpp webclient login" id="xmpp_webclient_login_encpass" value=""></input>
 		<label class="xmpp webclient login" for="xmpp_webclient_candy_style">Style:</label>
 		<select class="xmpp webclient login" id="xmpp_webclient_candy_style">
-			<option class="xmpp webclient login" value="./themes/light.css">Light</option>
-			<option class="xmpp webclient login" value="./themes/dark.css">Dark</option>
+			<option class="xmpp webclient login" value="./themes/light.css">light</option>
+			<option class="xmpp webclient login" value="./themes/dark.css">dark</option>
 		</select>
 		<button class="xmpp webclient login" id="xmpp_webclient_login_button">Verbinden</button>
 		<p class="xmpp webclient login notice">
@@ -43,25 +43,25 @@
 			* [ ALLE Nachrichten in diesem Fenster, Gruppen- und Privatchats, werden 
 			mit dem Verschlüsselungspasswort
 			ent- und verschlüsselt. D.h., alle Teilnehmer müssen das selbe Passwort verwenden, um 
-			kommunizieren zu können, falls ein Verschlüsselungspasswort verwendet wird. 
+			kommunizieren zu können, falls ein Verschlüsselungspasswort verwendet wird. Nicht oder
+			mit anderem Passwort verschlüsselte Nachrichten werden gar nicht erst angezeigt.
 			</span>
 			<span style="display: block;" class="xmpp webclient login notice">
 			Beim Erstellen <a href="./pages/en/link.html" target="_blank">eines Direktlinks für einen Raum</a>
 			muss das Verschlüsselungspasswort angegeben werden. Es ist dann im Link enthalten.
 			</span>
 			<span style="display: block;" class="xmpp webclient login notice">
-		    Es "muss" kein Verschlüsselungspasswort genutzt werden, aber es kann manchmal die Sicherheit
+		    Es "muss" kein Verschlüsselungspasswort genutzt werden, aber es kann manchmal die Privatssphäre 
 		    deutlich erhöhen: Nur wer das Passwort kennt, kann die Nachrichten lesen, noch nicht einmal der
 		    Server (dem das Passwort nie mitgeteilt wird). 
 		    </span>
 		    <span style="display: block;" class="xmpp webclient login notice">
 		    Die Verwendung eines solchen Passworts setzt allerdings voraus, dass allen
 		    Teilnehmern das Passwort bzw. der das Passwort enthaltende Link bekannt ist, und dass Passwort bzw.
-		    Link sicher ausgetauscht werden können. Außerdem müssen alle Teilnehmer ein Chatprogramm
-		    verwenden, das die Verschlüsselung mit dem Passwort unterstützt - momentan ist das nur diese
-		    Seite. Unverschlüsselte Nachrichten werden Nutzern mit Verschlüsselungspasswort einfach nicht
-		    angezeigt, und Nutzer, deren Client die Verschlüsselung nicht unterstützt, sehen sinnlosen
-		    verschlüsselten Text statt der Nachrichten. ]
+		    Link sicher ausgetauscht werden können. Um die Verschlüsselung zu verwende, müssen zudem alle
+		    Nutzer einen Client einsetzen, der diese Art der Verschlüsselung unterstützt - aktuell
+		    ist das nur diese Webseite. Das Verschlüsselungspasswort der NIE zugleich Raum- oder Loginpasswort
+		    sein, da es dem Server nicht bekannt sein darf!]
 			</span>
 		</p>
 		<p class="xmpp webclient login notice">

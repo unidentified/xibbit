@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html> <html lang="en"> <head>
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex, nofollow">
 	<title>Chat</title>
@@ -31,33 +29,41 @@
 	<script type="text/javascript" src="./candy/plugins/candy.irc.js"></script>
 	<script type="text/javascript" src="./candy/plugins/candy.admin.js"></script>
 	<script type="text/javascript" src="./candy/plugins/candy.extend.js"></script>
-	<script type="text/javascript" src="./js/chat.js"></script>
-</head>
-<body>
+	<script type="text/javascript" src="./js/chat.js"></script> </head> <body>
 	<div id="xmpp_webclient_login_form" class="xmpp webclient login">
 		<button class="xmpp webclient login optional" id="xmpp_webclient_login_hide_optional">Select server from list</button>
-		<label class="xmpp webclient login" id="xmpp_webclient_login_servers_label" for="xmpp_webclient_login_servers">Select Server from List:</label> 
+		<label class="xmpp webclient login" id="xmpp_webclient_login_servers_label" for="xmpp_webclient_login_servers">Select 
+Server from List:</label>
 		<select class="xmpp webclient login" id="xmpp_webclient_login_servers">
 		</select>
-		<button class="xmpp webclient login" id="xmpp_webclient_enter_serverdetails">... or enter server details yourself</button>
-		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_host">Host (example: jappix.com):</label>
+		<button class="xmpp webclient login" id="xmpp_webclient_enter_serverdetails">... or enter server details 
+yourself</button>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_host">Host (example: 
+jappix.com):</label>
 		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_host">
-		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_http">HTTP-Bind (example: https://bind.jappix.com/):</label>
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_http">HTTP-Bind (example: 
+https://bind.jappix.com/):</label>
 		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_http">
-		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_muc">MUC (example: muc.jappix.com, often conference. or muc. followed by host):</label>
-		<input class="xmpp webclient login optional"  id="xmpp_webclient_login_optional_muc">
-		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_anon">Anonymous (for unregistered joining, example: anonymous.jappix.com):</label>
-		<input class="xmpp webclient login optional"  id="xmpp_webclient_login_optional_anon">
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_muc">MUC (example: muc.jappix.com, 
+often conference. or muc. followed by host):</label>
+		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_muc">
+		<label class="xmpp webclient login optional" for="xmpp_webclient_login_optional_anon">Anonymous (for unregistered 
+joining, example: anonymous.jappix.com):</label>
+		<input class="xmpp webclient login optional" id="xmpp_webclient_login_optional_anon">
 		<label class="xmpp webclient login" for="xmpp_webclient_login_jid">JID (Username):</label>
 		<input class="xmpp webclient login" type="text" id="xmpp_webclient_login_jid">
-		<label class="xmpp webclient login" for="xmpp_webclient_login_pass">Password (If joining unregistered, leave this field empty and enter a nick of your choice for username **):</label>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_pass">Password (If joining unregistered, leave this 
+field empty and enter a nick of your choice for username **):</label>
 		<input class="xmpp webclient login" type="password" id="xmpp_webclient_login_pass">
-		<label class="xmpp webclient login" id="xmpp_webclient_login_languages_label" for="xmpp_webclient_login_languages">Language:</label>
+		<label class="xmpp webclient login" id="xmpp_webclient_login_languages_label" 
+for="xmpp_webclient_login_languages">Language:</label>
 		<select class="xmpp webclient login" id="xmpp_webclient_login_languages">
 		</select>
-		<label class="xmpp webclient login" for="xmpp_webclient_login_rooms">Rooms to join (seperate by comma, example: room1, room2):</label>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_rooms">Rooms to join (seperate by comma, example: room1, 
+room2):</label>
 		<input class="xmpp webclient login" id="xmpp_webclient_login_rooms" value="">
-		<label class="xmpp webclient login" for="xmpp_webclient_login_encpass">Encryption password (leave empty for none) *:</label>
+		<label class="xmpp webclient login" for="xmpp_webclient_login_encpass">Encryption password (leave empty for none) 
+*:</label>
 		<input class="xmpp webclient login" id="xmpp_webclient_login_encpass" value="">
 		<label class="xmpp webclient login" for="xmpp_webclient_candy_style">Style:</label>
 		<select class="xmpp webclient login" id="xmpp_webclient_candy_style">
@@ -67,25 +73,25 @@
 		<button class="xmpp webclient login" id="xmpp_webclient_login_button">Connect</button>
 		<p class="xmpp webclient login notice">
 			Read <a href="./pages/en/xmpp.html" target="_blank">here</a> if you
-			want to <a href="./pages/en/xmpp.html" target="_blank">create your 
+			want to <a href="./pages/en/xmpp.html" target="_blank">create your
 			own chatroom</a> and a <a href="./pages/en/link.html" target="_blank">link for users to autojoin it</a>.
 			<br>
-			You can create a link for a room even if you do not moderate it as well, so 
+			You can create a link for a room even if you do not moderate it as well, so
 			<a href="./pages/en/link.html" target="_blank">make links</a> for servers/ rooms you join
 			often as well - you won't have to fill the forms each time you login, and can choose
 			custom styles.
 		</p>
 		<p class="xmpp webclient login notice">
 			<span style="display: block;" class="xmpp webclient login notice">
-			* [ ALL messages in this window, group and private, will be encrypted and decrypted using this 
+			* [ ALL messages in this window, group and private, will be encrypted and decrypted using this
 			password. Of course, all participants will have to use the same password. NEVER use the
 			same password for encryption you already use as a room password, or as a login password, as
 			these passwords are sent to the server - the encryption password never is and must not be.
 			</span>
 			<span style="display: block;" class="xmpp webclient login notice">
-			If you create a <a href="./pages/en/link.html" target="_blank">direct link</a> for a 
+			If you create a <a href="./pages/en/link.html" target="_blank">direct link</a> for a
 			room, please specify the encryption password if you use one. It will be included in the
-			direct link. 
+			direct link.
 			</span>
 			<span style="display: block;" class="xmpp webclient login notice">
 			Using an encryption password is not mandatory, but can sometimes increase privacy, as only
@@ -95,23 +101,21 @@
 		</p>
 		<p class="xmpp webclient login notice">
 			<span style="display: block;" class="xmpp webclient login notice">
-			** [ Some servers allow unregistered users to join. If choosing a server from list, 
+			** [ Some servers allow unregistered users to join. If choosing a server from list,
 			these servers have a "(+a)" appended after the server name. Just leave the password
-			field empty and enter a nickname of your choice. 
+			field empty and enter a nickname of your choice.
 			</span>
 			<span style="display: block;" class="xmpp webclient login notice">
-			If entering server details yourself (not choosing from list), you need to 
+			If entering server details yourself (not choosing from list), you need to
 			specify the anonymous server to
 			connect unregistered. If you're going to connect with a registered account, you can
 			leave this field empty. ]
 			</span>
 		</p>
 		<p class="xmpp webclient login notice">
-			This page uses (a fork of) 
+			This page uses (a fork of)
 			<a href="http://candy-chat.github.io/candy" target="_blank">Candy Chat</a>
 			for multi user XMPP chat.
 		</p>
 	</div>
-	<div id="candy"></div>
-</body>
-</html>
+	<div id="candy"></div> </body> </html>
