@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Befehlsübersicht</title>
+		<link rel="stylesheet" type="text/css" href="../../css/default.css">
+	</head>
+	<body>
+		<div class="xmpp webclient">
+			<ul class="xmpp webclient">
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" target="_blank" href="#commands_basic">Einfache Befehle</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" target="_blank" href="#commands_admin">Administrative Befehle</a>
+				</li>
+			</ul>
+			<h2 class="xmpp webclient" id="commands_basic">Einfache Befehle</h2>
+			<p class="xmpp webclient">
+				Bitte beachten: Verwenden Sie die
+				 <a class="xmpp webclient" target="_blank" href="./faq.html">FAQ</a>
+				für weitere Informationen zu XMPP und zur Verwendung dieser Seite.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/join [room]</code></strong>
+				<br>
+				Beispiel 1: <code class="xmpp webclient">/join raum1</code> (Raum raum1 auf dem 
+				aktuell verwendeten Chatserver betreten).
+				<br>
+				Example 2: <code class="xmpp webclient">/join raum1@conference.someserver.com</code> 
+				(Raum raum1 auf dem Gruppenchat-Server conference.someserver.com 
+				betreten - bitte beachten Sie, dass 
+				nicht alle XMPP Server das Betreten von Räumen auf anderen Servern unterstützen, daher 
+				kann es sein, dass Sie einen Raum auf einem anderen Server als dem aktuell verwendeten
+				nicht betreten können).
+				<br>
+				Example 3: <code class="xmpp webclient">/join raum1 meinraumpasswort</code> 
+				(Den passwortgeschützten Raum raum1 betreten, wenn das Raumpasswort "meinraumpasswort"
+				lautet.)
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/part</code></strong>
+				<br>
+				Den aktuellen Raum verlassen. (Bitte beachten: Privatchats müssen aktuell grafisch 
+				geschlossen werden, indem der Tab geschlossen wird - klicken Sie auf das "x").
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/names</code></strong>
+				<br>
+				Auflisten aller User im aktuellen Raum. Nutzen Sie diesen Befehl auf kleinen Screens
+				(z.B. Smartphone), da dort keine Userliste angezeigt wird.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/query [nick]</code></strong>
+				<br>
+				Ein Privatchatfenster für einen Privatchat mit dem User unter dem angegebenen 
+				Nick öffnen. <br>
+				Beispiel: <code class="xmpp webclient">/query user1</code> (startet einen Privatchat
+				mit dem User user1).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/ignore [nick]</code></strong>
+				<br>
+				Ignorieren des Users unter dem angegebenen Nicknamen.<br>
+				Beispiel: <code class="xmpp webclient">/ignore user1</code> (ignoriert den User user1
+				in diesem Raum).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/unignore [nick]</code></strong>
+				<br>
+				Nicht mehr ignorieren des Users unterm angegebenen Nicknamen.
+				<br>
+				Beispiel: <code class="xmpp webclient">/unignore user1</code> (den User user1
+				nicht mehr ignorieren).
+			</p>
+			<h2 class="xmpp webclient" id="commands_admin">Administrative Befehle</h2>
+			<p class="xmpp webclient">
+				Bitte beachten: Verwenden Sie <a class="xmpp webclient" target="_blank" href="./xmpp.html">
+				die Info-Seite zu XMPP und Raumadministration</a> für weitere Informationen zu XMPP und 
+				zur Verwaltung eines Raumes.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/config</code></strong>
+				<br>
+				Konfigurieren des aktuellen Raums (öffnet ein Konfigurationsformular).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/set {affiliation | role} [wert] [user]</code></strong>
+				<br>
+				Setzt die Zugehörigkeit (affiliation) oder Rolle (role) eines Users auf einen bestimmten
+				Wert. "user" kann der Nickname des Users sein falls dieser sich gerade im Raum befindet,
+				oder seine JID.
+				<br>
+				Beispiel 1: <code class="xmpp webclient">/set affiliation member test1@myserver.com</code>
+				(setzt den User mit der JID test@myserver.com als permanentes Mitglied (member)
+				des aktuellen Raums).
+				<br>
+				Beispiel 2: <code class="xmpp webclient">/set affiliation admin user1</code>
+				(setzt den User mit dem Nicknamen user1 im aktuellen Raum als Administrator - 
+				der Server speichert die Zugehörigkeit automatisch und erkennt sie auch wieder, wenn
+				der User den Raum verlässt und wieder betritt).
+				<br>
+				Beispiel 3: <code class="xmpp webclient">/set role moderator user2</code>
+				(gibt dem User mit dem Nicknamen user2 die Rolle eines temporären Moderators,
+				i.e. der User bleibt so lange Moderator wie er im Raum ist).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/list [owner | admin | member | none | outcast | moderator | participant]</code></strong>
+				<br>
+				Auflisten aller User mit einer bestimmten Zugehörigkeit (affiliation) oder
+				Rolle (role). Beachten Sie, dass Zugehörigkeiten auch erhalten bleiben, wenn
+				der User nicht im Raum ist (außer "none", d.h. keine bestimmte Zugehörigkeit - dies
+				trifft für normale User ohne member-Zugehörigkeit zu) - die ausgegebene Liste zeigt
+				hier die JID an, nicht den Nicknamen.
+				<br>
+				Beispiel 1: <code class="xmpp webclient">/list admin</code> (liste alle User
+				mit der Zugehörigkeit "admin", also alle Admins des Raumes, auf).
+				<br>
+				Beispiel 2: <code class="xmpp webclient">/list outcast</code> (liste alle
+				User mit der Zugehörigkeit "outcast", also alle gebannten User, auf).
+				<br>
+				Beispiel 3: <code class="xmpp webclient">/list moderator</code> (liste alle 
+				User mit Moderatorrolle auf, das sind neben temporären Moderatoren auch 
+				<strong class="xmpp webclient">anwesende</strong> Raumeigentümer und Admins).
+				<br>
+				Beispiel 4:  <code class="xmpp webclient">/list none</code> (liste alle User
+				ohne spezielle Zugehörigkeit auf - das sind die anwesenden normalen User ohne
+				member-Status).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/ban {user}</code></strong>
+				<br>
+				Bannt einen User (für "user" kann der Nickname eingesetzt werden falls der User
+				anwesend ist, oder generell die JID).
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/unban {jid}</code></strong>
+				<br>
+				Einen User nicht mehr bannen (JID des Users einsetzen). 
+				<br>
+				Bitte beachten (!): In Räumen, die nur von Mitgliedern betreten werden 
+				können, muss statt oder zusätzlich zu <code class="xmpp webclient">/unban</code> der Befehl 
+				<code class="xmpp webclient">/set affiliation member {jid}</code> verwendet
+				werden, um dem User wieder Mitgliedsstatus zu geben.
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/kick {user}</code></strong>
+				<br>
+				Einen User aus dem Raum kicken (Nickname angeben, nicht die JID).
+			</p>
+		</div>
+	</body>
+</html>

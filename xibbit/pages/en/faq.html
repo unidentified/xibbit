@@ -34,30 +34,33 @@
 				to chat with others after registering at a server.
 			</p>
 			<p class="xmpp webclient">
-				There are many XMPP servers, and a lot of them allow users to register for
-				free. Many of them support groupchat (not every server supports any possible
+				There are quite a number of public XMPP servers at the moment, 
+				and a lot of them allow users to register for free. 
+				Many servers support groupchat (not every server supports any possible
 				feature). Most servers have a homepage which allows users to register, only a 
 				few allow registration via client. 
 			</p>
 			<p class="xmpp webclient">
 				XMPP clients are instant messaging programs which can either be installed on
 				a users computer or smartphone, or run on a web page (the latter only works if
-				the servers supports access via webpages, but a quite a number of servers do). 
+				the server supports access via webpages, but a quite a number of servers do). 
 				<br>
 				XMPP clients are either multimessengers like Pidgin which as well support XMPP,
 				or dedicated XMPP clients (like, for example, Psi, some mobile apps, or 
 				webbased clients like converseJS or iJab).
 			</p>
 			<p class="xmpp webclient">
-				Users on a XMPP server are identified via a JID (Jabber ID - Jabber is used
-				synonymously for XMPP). After registering, you have a JID in the form username@server,
+				Users on a XMPP server are identified via a <strong class="xmpp webclient">JID (Jabber ID)</strong>
+				 - Jabber is used
+				synonymously for XMPP. After registering, you have a JID in the form username@server,
 				which you can use to login. The login form on this page takes your JID in username
 				fields.
 				<br>
 				XMPP groupchat rooms are identified via a JID as well - this is in the form of 
-				roomname@groupchatserver.
+				roomname@groupchatserver (most servers have the groupchatserver as a subdomain,
+				for example muc.jappix.com for jappix.com).
 			</p>
-			<h2 class="xmpp webclient" id="faq_website"></h2>
+			<h2 class="xmpp webclient" id="faq_website">How does this website work?</h2>
 			<p class="xmpp webclient">
 				This website works as a <strong class="xmpp webclient">XMPP client for
 				groupchats</strong>. It works with any XMPP server which supports XMPP MUC
@@ -73,7 +76,7 @@
 				autojoin links</a> which already define the
 				server and rooms, so that who clicks the link is greeted with a login form that
 				asks for JID and password, or only for a nickname if the link is for unregistered 
-				joining.
+				joining (which some servers support).
 			</p>
 			<p class="xmpp webclient">
 				XMPP multiuser chatrooms can be used and administrated via this page.
@@ -84,30 +87,39 @@
 				doesn't yet exist. This makes the user owner. Such a room exists as long as 
 				there are occupants in it, and after everyone left, the room and it's settings
 				disappear. <br>
-				To register a room, the user who joined it and is owner has to configure it and
-				make it persistent.
+				To <strong class="xmpp webclient">register a room</strong>, the user who joined it and is owner has to configure it and
+				make it <strong class="xmpp webclient">persistent</strong>.
 			</p>
 			<p class="xmpp webclient">
-				Users in a room have an affiliation as well as a role. An affiliation is permanent - 
-				something like owner, admin, member, none (normal user) or outcast (banned). The
-				servers saves it and it stays as long as the room persists. A role, on the other hand,
+				Users in a room have an <strong class="xmpp webclient">affiliation</strong>
+				 as well as a <strong class="xmpp webclient">role</strong>.<br>
+				An <strong class="xmpp webclient">affiliation</strong> is permanent - 
+				something like owner, admin, member (normal user, who is a "registered" member
+				of this room), none (normal user) or outcast (banned). The
+				server saves it and it stays as long as the room persists, even if the
+				user leaves and joins (with the same or a different nickname). 
+				<br> A <strong class="xmpp webclient">role</strong>, on the other hand,
 				exists as long as a user is occupant of a room. Roles are those of participant or 
 				moderator. If a role is set to none, a user is kicked. Owners and admins are moderator
 				by default, while other users can be given moderator role by an owner or admin - this
 				is a temporary moderator role, as it is lost when leaving the room.
 			</p>
 			<p class="xmpp webclient">
-				Admins can kick and ban and set users as members. Owners can do the same as admins,
+				Admins can kick and ban and set users as members (members are normal users
+				with a persistent member affiliation to a room). Owners can do the same as admins,
 				but also configure the room (register or destroy it, set the maximum number of 
 				occupants, set room passwords etc.) and set other users as owners or admins. 
 				Temporary moderators can kick users (and set subjects and such, in a lot of rooms,
 				any user can).
 			</p>
 			<p class="xmpp webclient">
-				Usually, any user can join a room. However, a room can be password protected or members
-				only. A password protected room can only be joined by those who have the room password,
+				Usually, any user can join a room. However, a room can be 
+				<strong class="xmpp webclient">password protected<strong class="xmpp webclient"> or 
+				<strong class="xmpp webclient">members only</strong>.
+				A password protected room can only be joined by those who have the room password,
 				while a members only room can only be joined by people who were set as a member by an
-				owner or admin (owners and admins can give users member status using their JID). 
+				owner or admin (owners and admins can give users member status using their JID) - owners
+				and admins have member status by default. 
 			</p>
 			<p class="xmpp webclient">
 				To learn more about XMPP multi user chat and room administration, take a look at 

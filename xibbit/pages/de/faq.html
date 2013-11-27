@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>FAQ</title>
+		<link rel="stylesheet" type="text/css" href="../../css/default.css">
+	</head>
+	<body>
+		<div class="xmpp webclient">
+			<h1 class="xmpp webclient">FAQ</h1>
+			<ul class="xmpp webclient">
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_xmpp" target="_self">Was ist XMPP?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_website" target="_self">Wie funktioniert diese Webseite?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_muc" target="_self">Wie funktioniert der Gruppenchat bei XMPP?</a>
+				</li>
+				<li class="xmpp webclient">
+					<a class="xmpp webclient" href="#faq_commands" target="_self">Welche Chatbefehle gibt es?</a>
+				</li>
+			</ul>
+			<h2 class="xmpp webclient" id="faq_xmpp">Was ist XMPP?</h2>
+			<p class="xmpp webclient">
+				XMPP ist ein Protokoll für Sofortnachrichten (Instant Messaging, IM)
+				und Gruppenchats (MUC - Multi User Chat). Es definiert ähnliche Funktionen
+				wie Sie sie vielleicht von ICQ, Google Talk (XMPP-basiert) oder Skype kennen.
+				<br>
+				"Protokoll" bedeutet hier, dass XMPP ein technischer Standard ist, der 
+				festlegt, wie XMPP-Server und XMPP-Clienten sich verhalten, d.h. z.B. welche
+				Funktionen es gibt, welche Funktionen es noch zusätzlich geben kann, wie
+				Nachrichten versendet werden usw. 
+				<br>
+				Dabei werden die Begriffe XMPP und Jabber synonym verwendet - die Umbenennung
+				des Jabber-Standards zu XMPP hatte rechtliche Gründe.
+			</p>
+			<p class="xmpp webclient">
+				Es gibt mittlerweile relativ viele XMPP Server, und ebenfalls viele davon
+				erlauben kostenloses Registrieren und Nutzen. Ein Großteil davon unterstützt
+				Gruppenchat. <br>
+				Üblicherweise registriert man sich auf der Homepage des XMPP Servers, nur
+				ein paar wenige erlauben oder verlangen das Registrieren über einen 
+				Clienten. 
+			</p>
+			<p class="xmpp webclient">
+				XMPP Clienten sind entweder Multimessenger wie z.B. Pidgin, oder dedizierte 
+				XMPP Clienten wie z.B. Psi oder einige Smartphone-Apps. Diese "Auflistung"
+				ist natürlich nicht vollständig, da es sehr viele XMPP Clienten gibt.
+				<br>
+				Neben installierten XMPP Clienten gibt es auch XMPP Clienten, die direkt 
+				im Browser laufen und dort ausgeführt werden. Diese können z.B. auf einer
+				Webseite wie dieser sein, lokal gespeichert werden oder als Addon installiert.
+				Dazu muss der Server Webzugriff (das sogenannte HTTP Binding) unterstützen - 
+				dies ist jedoch häufig der Fall, sodass es möglich ist, XMPP ohne installierten
+				Clienten zu verwenden. Das ermöglicht auch eine reibungslose Nutzung z.B. mit dem
+				Tor Browser oder auf Smartphones.
+				<br>
+				XMPP Clienten im Browser sind z.B. diese Webseite, converseJS, iJab oder Jappix
+				und Jappix Mini.
+			</p>
+			<p class="xmpp webclient">
+				User auf einem XMPP Server werden durch eine <strong class="xmpp webclient">
+				JID (Jabber ID)</strong> identifieziert. Eine JID ist für XMPP/Jabber, was eine
+				Mailadresse für Mail ist. Der User kann sich mit seiner JID und seinem Passwort, die in der Form
+				username@server ist, einloggen (falls ein Einloggen in einem Client mit dem Usernamen
+				als Usernamen nicht funktioniert, immer die gesamte JID als Username probieren).
+				Andere User können den User unter dieser JID anschreiben.
+				<br>
+				XMPP Gruppenchat Räume haben ebenfalls eine JID, in der Form raumname@gruppenchatserver.
+				Die URL des Gruppenchatserver ist üblicherweise etwas anders als die Server-URL, z.B. 
+				oft conference.server oder muc.server, z.b. bei jappix.com muc.jappix.com.
+				<br>
+				User in einem Gruppenchatraum lassen sich über ihren Nicknamen anschreiben, Moderatoren
+				können auch die echte JID sehen (in manchen Räumen kann jeder User die JID der anderen
+				sehen).
+			</p>
+			<h2 class="xmpp webclient" id="faq_website">Wie funktioniert diese Webseite?</h2>
+			<p class="xmpp webclient">
+				Diese Webseite funktioniert als <strong class="xmpp webclient">XMPP Client 
+				für Gruppenchats</strong>. Sie funktioniert mit jedem XMPP Server, der XMPP
+				MUC (Multi User Chat) und Webzugriff unterstützt.
+			<p class="xmpp webclient">
+				Diese Seite ermöglicht Ihnen, sich einzuloggen und Gruppenchats zu betreten. 
+				Nutzen Sie dafür die <a class="xmpp webclient" href="../../chat.html#?lang=de" target="_blank">
+				Login-Seite</a>. (Bitte beachten: Die Formulare möchten üblicherweise eine JID als
+				Username.)
+				<br>
+				Diese Seite erlaut es zudem, <a class="xmpp webclient" href="./link.html" target="_blank">Links
+				zum automatischen Betreten von Räumen</a> zu erstellen. Diese speichern
+				Server und Raumname(n) schon im Link, sodass ein User, der darauf klickt, nur noch
+				eine Loginform (JID und Passwort) ausfüllen muss, oder nur einen Nicknamen eingeben,
+				falls es sich um einen Link für unregistriertes Betreten handelt (unregistriertes 
+				Betreten von Gruppenchats wird nicht von allen Servern unterstützt).
+			</p>
+			<p class="xmpp webclient">
+				XMPP Gruppenchats können auch über diese Webseite registriert und administriert werden. Bitte
+				lesen Sie dazu  <a class="xmpp webclient" href="./xmpp.html" target="_blank">
+				die Infoseite</a>.
+			</p>
+			<h2 class="xmpp webclient" id="faq_muc">Wie funktioniert XMPP MUC (Multi User Chat)?</h2>
+			<p class="xmpp webclient">
+				XMPP Multi User Chat Räume werden erstellt sobald ein (registrierter) User versucht,
+				einen Raum zu betreten, der noch nicht existiert. Ein solcher Raum existiert solange,
+				wie sich Besucher in ihm befinden. Der User, der den Raum zuerst betreten hat, ist
+				Raumeigentümer. 
+				<br>
+				Der Raumeigentümer kann den Raum registrieren, indem er ihn konfiguriert und als 
+				persistent einstellt. Tut er dies nicht, so verschwindet der Raum und alle gemachten
+				anderen Einstellungen wieder, sobald alle User den Raum verlassen haben.
+			</p>
+			<p class="xmpp webclient">
+				User in einem XMPP MUC Raum haben eine sowohl eine 
+				<strong class="xmpp webclient">Zugehörigkeit
+				(<em class="xmpp webclient">affiliation</em>)</strong> als auch
+				eine <strong class="xmpp webclient">Rolle
+				(<em class="xmpp webclient">role</em>)</strong>.
+				<br>
+				Eine <strong class="xmpp webclient">Zugehörigkeit</strong> ist persistent
+				(permantent). Hier gibt es "owner" (Raumeigentümer - diese haben die
+				meisten Rechte und können den Raum konfigurieren, es kann mehrere geben), "admin" (Admins), 
+				"member" (als Raummitglieder eingetragene Nutzer) und "outcast" (gebannte User).
+				Der Server speichert die Zugehörigkeit basierend auf der JID, sodass ein User
+				diese auch behält, wenn er den Raum verlässt und unter dem selben oder einem anderen
+				Nicknamen wieder betritt. Die Zugehörigkeit bleibt solange erhalten wie der 
+				Raum existiert oder sie manuell verändert wird. Normale aktuell anwesende User ohne
+				administrative Privilegien oder Mitgliedsstatus haben die Zugehörigkeit "none",
+				also keine bestimmte. 
+				<br>
+				Eine <strong class="xmpp webclient">Rolle</strong> dagegen ist nicht persistent.
+				Sie bleibt so lange erhalten wie der User sich im Raum befindet. Normale User haben
+				die Rolle eines Teilnehmers ("participant"), Admins und Eigentümer sowie temporäre
+				Moderatoren die Rolle eines Moderators ("moderator"). Temporäre Moderatoren sind
+				normale User, deren Rolle von einem Eigentümer oder Admin auf Moderator ("moderator")
+				gesetzt wurde. Ihr Moderatorstatus verschwindet wieder sobald sie den Raum verlassen.
+				Kicken funktioniert, indem ein Moderator die Rolle des zu kickenden Users auf "none", 
+				also keine mehr, setzt - damit verlässt der User automatisch den Raum. 
+			</p>
+			<p class="xmpp webclient">
+				Admins können kicken, bannen, und Usern permanenten Mitgliedsstatus geben. Raumeigentümer
+				können das selbe wie Admins, aber zusätzlich v.A. den Raum konfigurieren (z.B. 
+				ihn registrieren oder löschen, die maximale Anzahl der Nutzer setzen, ein Raumpasswort
+				setzen oder entfernen, nur Mitglieder als Nutzer erlauben etc.). Temporäre Moderatoren
+				können vorrangig User kicken, und ein paar kleinere Dinge wie z.B. in manchen Räumen das
+				Thema setzen in denen normale User dies nicht dürfen.
+			</p>
+			<p class="xmpp webclient">
+				Normalerweise kann ein Raum von allen Usern auf dem Server betreten werden, manchmal
+				auch von Usern von anderen Servern. Allerdings können Raumeigentümer den <strong class="xmpp webclient">
+				Zugriff zu einem Raum einschränken</strong>. Räume können auch <strong class="xmpp webclient">
+				nur für Mitglieder zugänglich (members only)</strong> oder 
+				<strong class="xmpp webclient">durch ein Zugangspasswort geschützt</strong> werden. 
+				Bei einem Raum, den nur Mitglieder betreten können, muss ein Admin neuen Usern, die vorher
+				noch kein Mitglied waren, Mitgliedsstatus geben.
+			</p>
+			<p class="xmpp webclient">
+				Auf der 
+				<a class="xmpp webclient" target="_blank" href="./xmpp.html">Infoseite</a>
+				finden Sie mehr Informationen über XMPP und Raumadministration.
+			</p>
+			<h2 class="xmpp webclient" id="faq_commands">Welche Befehle funktionieren im Chat?</h2>
+			<p class="xmpp webclient">
+				Der XMPP-Client auf dieser Webseite unterstützt einige einfache Befehle, die 
+				z.B. zum Betreten und Verlassen von Räumen, dem Öffnen von Privatchats, dem
+				Auflisten aller Nutzer im Raum oder dem Ignorieren und oder dem Aufheben des Ignorierens
+				von Usern dienen. 
+				<br>
+				Er unterstützt auch administrative Befehle, d.h. die Verwaltung eines Raums über diese
+				Seite.
+			</p>
+			<p class="xmpp webclient">
+				Bitte lesen Sie die <a class="xmpp webclient" target="_blank" href="./commands.html">
+				Befehlsübersicht</a> um eine Liste aller verwendbaren Befehle zu erhalten.
+			</p>
+		</div>
+	</body>
+</html>

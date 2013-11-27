@@ -9,32 +9,33 @@
 	<body>
 		<div class="xmpp webclient">
 			<p class="xmpp webclient">
-				This page provides some information on what XMPP (Jabber - the words
-				"XMPP" and "Jabber" are usually used synonymously)
-				is, and how to use it for multi user chatrooms. It also
-				explains how to administrate XMPP groupchats with this page as a
-				client.
+				Diese Seite enthält einige Informationen über XMPP (Jabber - die Begriffe 
+				"XMPP" und "Jabber" werden in der Regel synonym verwendet). Es wird erklärt
+				was XMPP ist bzw. wie man es für die Realisierung von Gruppenchats 
+				(Multi User Chat, MUC) verwendet. Weiterhin wird die Administation 
+				von XMPP Gruppenchats mittels des auf dieser Seite bereitgestellten Webclienten 
+				erläutert. 
 			</p>
 			<p class="xmpp webclient">
-				This informational page especially focuses on people who want to
-				understand how XMPP multi user chats work or administrate
-			    their own chatroom. <br>
-				If you are not interested in this, you
-				 might just read the <a href="./faq.html" target="_blank">FAQ</a>
-				and the <a href="./commands.html" target="_blank">command overview</a>
-				(which admins should read as well, of course).
+				Diese Seite konzentriert sich vor allem auf die Nutzer, die verstehen wollen, 
+				wie XMPP Gruppenchats arbeiten oder ihren eigenen Chatraum administrieren 
+				möchten.<br>
+				Wenn Sie daran nicht interessiert sind, so ist es ausreichend lediglich die
+				<a href="./faq.html" target="_blank">FAQ</a> bzw. die 
+				<a href="./commands.html" target="_blank">Befehlsübersicht</a> zu lesen.
+				Administratoren sollten dies natürlich auch tun.
 			</p>
 			<ul class="xmpp webclient">
 				<li class="xmpp webclient">
 					<h2 class="xmpp webclient">
 							<a class="xmpp webclient" href="#whatis_xmpp" target="_self">
-								What is XMPP?
+								Was ist XMPP? 
 							</a>
 					</h2>
 					<ul class="xmpp webclient">
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#whatis_xmpp_users" target="_self">
-								Users in XMPP
+								Benutzer in XMPP
 							</a>
 						</li>
 					</ul>
@@ -42,30 +43,30 @@
 				<li class="xmpp webclient">
 					<h2 class="xmpp webclient">
 							<a class="xmpp webclient" href="#whatis_xmpp_muc" target="_self">
-								What is XMPP MUC (Multi User Chat)?
+								Was ist ein XMPP-Gruppenchat (XMPP-MUC, multi user chat)?
 							</a>
 					</h2>
 				</li>
 				<li class="xmpp webclient">
 					<h2 class="xmpp webclient">
 							<a class="xmpp webclient" href="#rooms" target="_self">
-								Rooms, affiliation and roles
+								Räume, Zugehörigkeiten und Rollen
 							</a>
 					</h2>
 					<ul class="xmpp webclient">
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#rooms_roles" target="_self">
-								Roles: Participants and Moderators
+								Rollen: Teilnehmer und Moderatoren
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#rooms_aff" target="_self">
-								Affiliatons: Owners, Admins and Members
+								Zugehörigkeiten: Eigentümer, Administratoren und Mitglieder
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#rooms_conf" target="_self">
-								Room configuration
+								Raumkonfiguration
 							</a>
 						</li>
 					</ul>
@@ -73,126 +74,128 @@
 				<li class="xmpp webclient">
 					<h2 class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin" target="_self">
-								Administrating a chatroom using this client
+								Administrierung eines Chatraumes über diese Webseite
 							</a>
 					</h2>
 					<ul class="xmpp webclient">
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin_conf" target="_self">
-								Configuring the room
+								Konfiguration eines Raumes
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin_aff" target="_self">
-								Setting affiliations
+								Zugehörigkeiten verwalten
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin_roles" target="_self">
-								Setting roles
+								Rollen verwalten
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin_kickban" target="_self">
-								Kick and ban
+								Kicken und Bannen
 							</a>
 						</li>
 						<li class="xmpp webclient">
 							<a class="xmpp webclient" href="#admin_list" target="_self">
-								Using the /list command
+								Verwenden des /list-Befehls
 							</a>
 						</li>
 					</ul>
 				</li>
 			</ul>
-			<h2 class="xmpp webclient" id="whatis_xmpp">What is XMPP (Jabber)?</h2>
+			<h2 class="xmpp webclient" id="whatis_xmpp">Was ist XMPP (Jabber)?</h2>
 			<p class="xmpp webclient">
-				XMPP is an instant messaging protocol. This means that there are XMPP
-				servers, and with a XMPP client, you can use a XMPP account you registered
-				at a XMPP server. Usually registration happens on the server provider's 
-				homepage.
+				XMPP ist ein Protokoll für den Versand von Sofortnachrichten 
+				(Instant-Messaging Protokoll). Dies bedeutet, dass XMPP-Server 
+				im Web vorhanden sind, auf denen Sie sich ein XMPP-Konto registrieren 
+				und mittels eines XMPP-Clienten nutzen können. Die Registrierung eines 
+				XMPP-Kontos geschieht in der Regel auf der Homepage des XMPP-Servers.
 			</p>
 			<p class="xmpp webclient">
-				XMPP has similar features to ICQ, Google Talk (which is based on XMPP),
-				Facebook Chat or Skype. It supports usual instant messaging as well as 
-				groupchats. There are several well known XMPP servers which allow users to
-				register for free, such as jappix.com or jabber.org. Some 
-				services allow you to chat with XMPP users registered at another XMPP server.
+				XMPP bietet ähnliche Funktionen wie ICQ, Google Talk (basierend auf XMPP), 
+				Facebook-Chat oder Skype. Es unterstützt die üblichen Sofortnachrichten 
+				sowie Gruppenchats. Es gibt mehrere bekannte XMPP-Server auf denen sich 
+				Benutzer kostenlos registrieren können, z.B. jappix.com oder jabber.org. 
+				Viele XMPP-Server erlauben die Kommunikation mit Nutzern eines anderen 
+				XMPP-Servers d.h. einem Server eines anderen XMPP-Serviceanbieters.
 			</p>
 			<p class="xmpp webclient">
-				Most instant messengers (like, for example, Pidgin or Miranda) can be used
-				as XMPP clients, and there are a lot of other XMPP clients. If you
-				use XMPP for instant messaging, you most likely want to use some instant 
-				messenger.
+				Die meisten Instant Messenger (wie z.B. Pidgin oder Miranda) können für 
+				das XMPP-Protokoll verwendet werden. Desweiteren gibt es viele andere 
+				XMPP-Clienten. Für den Versand von Sofortnachrichten mittels des 
+				XMPP-Protokolls, werden Sie wahrscheinlich den Einsatz eines 
+				Instant-Messenger am praktischsten finden.
 			</p>
 			<p class="xmpp webclient">
-				Some XMPP servers support web access, the so-called HTTP binding. 
-				This allows XMPP clients
-				to simply run on web pages. The page is loaded in browser, and the program
-				(XMPP client) executed directly in browser. No download or installation is
-				required, and the website's resources aren't used up for chat traffic. (Of course,
-				such XMPP client pages can be saved locally or bundled as browser addons
-				as well.)
+				Einige XMPP-Server unterstützen Webzugriff, das sogenannte HTTP-Bindung. 
+				Dadurch können XMPP-Clients einfach auf Webseiten ausgeführt werden. 
+				Die Webseite wird samt dem auf ihr befindlichen Programm, dem XMPP-Clienten, 
+				geladen und direkt im Browser ausgeführt. Somit ist weder ein Download 
+				noch eine Installation erforderlich, außerdem werden - dank externem 
+				XMPP-Server - keine eigenen Webserver-Ressourcen für die Verwendung eines 
+				auf Ihrer Website bereitgestellten Chats in Anspruch genommen.
 				<br>
-				This technology makes integrating chats (chat rooms, support chats, even
-				fully featured instant messengers) on
-				web pages very easy.
+				Diese Technologie macht die Integration von Chats (Chat-Räume, Supportchats 
+				und sogar vollständige Instant-Messenger) auf Webseiten sehr einfach.
 			</p>
 			<p class="xmpp webclient">
-				The features of instant messaging, groupchat and web access make XMPP a 
-				very flexible protocol that - once you found a server that meets your needs - 
-				runs about everywhere.
+				Funktionalitäten wie der Versand von Sofortnachrichten (Instant Messaging),
+				Gruppenchat und Webzugriff sind es, die zusammengefasst das sehr flexible 
+				XMPP-Protokoll definieren, das - wenn Sie einen Server gefunden haben, der 
+				Ihren Bedürfnissen entspricht - nahezu überall eingesetzt werden kann.
 			</p>
-			<h3 class="xmpp webclient" id="whatis_xmpp_users">Users in XMPP</h3>
+			<h3 class="xmpp webclient" id="whatis_xmpp_users">Benutzer in XMPP</h3>
 			<p class="xmpp webclient">
-				A user is identified by a <strong class="xmpp webclient">Jabber-ID</strong>, 
-				usually abbreviated as <strong class="xmpp webclient">JID</strong> or
-				Jid. This ID has the form of user@server, i.e. if the username is
-				user1 and the server is jappix.com, the JID of user1 would be user1@jappix.com.
-			</p>
-			<p class="xmpp webclient">
-				Usually, the JID is used to identify a user in XMPP. A user logs in with
-				their JID and password, and addresses their contacts using their JIDs. A JID
-				is in XMPP what a mail address is for mail.
-			</p>
-			<h2 class="xmpp webclient" id="whatis_xmpp_muc">What is XMPP MUC (Multi User Chat)?</h2>
-			<p class="xmpp webclient">
-				XMPP supports <strong class="xmpp webclient">multi user chat (MUC)</strong>
-				 with a lot of features. Rooms are created
-				by simply joining them. So if you, as a registered user, join a room that doesn't
-				exist yet, the XMPP server will simply create it - the first one who joined, you
-				in this case, is owner and admin. Once all users have left the room, it is automatically
-				destroyed. 
+					Ein Benutzer wird durch eine "Jabber-ID" (meist mit "JID" oder "Jid" 
+					abgekürzt) identifiziert. Diese ID hat die Form user@server, d.h. die JID
+					"user1@jappix.com" gehört zu dem Benutzer mit dem Namen "user1" der den 
+					Server "jappix.com" verwendet.
 			</p>
 			<p class="xmpp webclient">
-				To <strong class="xmpp webclient">register</strong> 
-				a MUC room, so that is persists when it is empty, 
-				you need to configure the room. In XMPP,
-				registering a room is called making the room 
-				<strong class="xmpp webclient">persistent</strong>.
+					In der Regel wird die JID zur Identifizierung eines Benutzers in XMPP genutzt. 
+					Ein Benutzer meldet sich dabei mit seiner JID und seinem Kennwort an, wobei 
+					seine Kontakte durch deren JIDs angesprochen werden. Eine JID in XMPP ist 
+					vergleichbar mit einer eMail-Adresse für Mailservices.
+			</p>
+			<h2 class="xmpp webclient" id="whatis_xmpp_muc">Wie funktionieren Gruppenchats über XMPP?</h2>
+			<p class="xmpp webclient">
+					XMPP unterstützt auch Gruppenchats (multi-user-chat, MUC) mit einer großen Anzahl von Funktionen. 
+					Unterstützt ein Server Gruppenchats, können auf diesem Räume registriert und verwendet
+					werden.<br>
+					Dabei wird ein MUC-Raum einfach erstellt, indem ein registrierter User einen noch nicht
+					existierenden Raum betritt. Dieser wird automatisch vom Server erstellt. Der User, der den
+					noch nicht registrierten Raum als erstes betreten hat, ist automatisch Raumeigentümer 
+					mit administrativen Rechten. 
+					Sobald alle Benutzer den Raum verlassen haben, 
+					wird dieser allerdings automatisch wieder gelöscht.
+			</p>
+			<p class="xmpp webclient">
+					Um einen Gruppenchatraum (MUC) so einzurichten, dass er auch dann weiterhin besteht
+					wenn er leer ist, d.h. alle Benutzer ihn verlassen haben, muss der Raum  
+					<strong class="xmpp webclient">registriert</strong> werden. Um einen Raum zu 
+					registrieren muss dieser konfiguriert werden. Dazu wird bei der Konfiguration der
+					Raum als <strong class="xmpp webclient">persistent</strong> (beständig) eingestellt.
+					<br>
+					Nachdem Sie den Raum als persistent eingerichtet haben, bleibt der Raum 
+					dauerhaft auf dem XMPP-Server bestehen und Sie sind fortan dessen Besitzer.
+			</p>
+			<p class="xmpp webclient">
+				Besitzer (owner) von persistenten sowie nicht persistent Räumen können andere Benutzer 
+				zu Besitzern (owner), Administratoren (admin), Moderatoren (moderators) oder auch 
+				Mitgliedern (members) ernennen. <br>
+				(Mitglieder sind normale Nutzer, die permanenten Mitgliedsstatus in einem Raum haben -
+				damit sind sie nicht immer anwesend, aber quasi im Raum "registriert").
 				<br>
-				After you've made the room persistent, the room is permanently registered at the XMPP
-				server and you are owner and admin. (XMPP clients usually provide graphical
-				ways of configuring a room, and there should be a setting for 
-				persistence.)
+				Passwortschutz für Räume wird ebenso unterstützt wie Räume, die nur von Mitgliedern
+				(member) betreten werden können (members only). Für letzteres müssen Admins zunächst 
+				Nutzern basierend auf deren JID Mitgliedsstatus geben.
 			</p>
 			<p class="xmpp webclient">
-				<strong class="xmpp webclient">Owners</strong>
-				 of persistent as well as unpersistent rooms can set other users as owners,
-				administrators, moderators or members. (Members are normal users which have a persistent
-				members status in a room - usually everyone can join without such a member status,
-				but members can still enter the room if it is set as members only, and admins can
-				view a list of all members even if they are not in the room.)
-				<br>
-				Password protection for rooms is supported
-				as well as members only rooms. In a members only rooms, the owner and admins have 
-				to assign member status to other users based on their real JID before these others
-				are able to join. Password protected rooms require a password to join them. 
-			</p>
-			<p class="xmpp webclient">
-				Usually, the room owner configures the room (persistent or not, members only or not,
-				password or not, maximum numbers of users and such), and then manually adds or 
-				removes admins, members or assigns temporary moderator status to users. 
+				Üblicherweise konfiguriert der Raumeigentümer zunächst den Raum, und definiert später
+				die Zugehörigkeiten der Nutzer (z.B. andere Eigentümer, Admins und Mitglieder).
 			</p>
 			<h2 class="xmpp webclient" id="rooms">Rooms, affiliations and roles</h2>
 			<p class="xmpp webclient">
