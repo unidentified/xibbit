@@ -1,4 +1,6 @@
-var CandyExtend = (function(self) { return self; }(CandyExtend || {})); CandyExtend.Modules = (function(self, Candy, $) {
+var CandyExtend = (function(self) { return self; }(CandyExtend || {}));
+
+CandyExtend.Modules = (function(self, Candy, $) {
 	var originalOnMessage = Candy.Core.Event.Jabber.Room.Message;
 	var muc_service = "";
 	var aes_password = "";
@@ -25,8 +27,7 @@ var CandyExtend = (function(self) { return self; }(CandyExtend || {})); CandyExt
 				return "";
 			}else{
 				if(aes_password.length>0){
-					message = sjcl.encrypt(aes_password, message, {"mode": "ocb2", "ks": 256, "ts": 128, "iter": 
-1000});
+					message = sjcl.encrypt(aes_password, message, {"mode": "ocb2", "ks": 256, "ts": 128, "iter": 1000});
 				}
 				return message;
 			}
@@ -44,8 +45,7 @@ var CandyExtend = (function(self) { return self; }(CandyExtend || {})); CandyExt
 					dec = self.sanitizeText(dec);
 					return dec;
 				}catch(e){
-					//return "[CHAT: Received a message that could not be decrypted. Probably sent from another 
-client, or the sender is using a different encryption password.]";
+					//return "[CHAT: Received a message that could not be decrypted. Probably sent from another client, or the sender is using a different encryption password.]";
 					return "";
 				}
 			}else{
@@ -56,8 +56,7 @@ client, or the sender is using a different encryption password.]";
 			Candy.Core.Action.Jabber.Room.Disco(room_jid);
 			// dear servers, get it or leave it...
 			// http://www.tigase.org/content/muc-managing-discussion-history-does-not-work *sign*
-			Candy.Core.getConnection().muc.join(room_jid, Candy.Core.getUser().getNick(), null, null, room_pass, 
-{"maxchars": 0});
+			Candy.Core.getConnection().muc.join(room_jid, Candy.Core.getUser().getNick(), null, null, room_pass, {"maxchars": 0});
 		};
 		Candy.Core.Event.Jabber.Room.Message = function(msg){
 			
@@ -74,8 +73,7 @@ client, or the sender is using a different encryption password.]";
 			
 			// some servers still show return all the history, even if maxchars='0'.
 			// strophe bug? server bug? sometimes this, sometimes that...
-			var delay = msg.children('delay') ? msg.children('delay') : msg.children('x[xmlns="' + Strophe.NS.DELAY 
-+'"]'),
+			var delay = msg.children('delay') ? msg.children('delay') : msg.children('x[xmlns="' + Strophe.NS.DELAY +'"]'),
 					timestamp = delay !== undefined ? delay.attr('stamp') : null;
 			var is_groupchat = !((msg.attr('type') == "chat") || (msg.attr('type') == "error"));
 			var is_delayed_message = (delay.length > 0);
