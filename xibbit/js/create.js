@@ -1,7 +1,48 @@
-
+$(document).ready(function(){
+	populateThemeList();
+});
+function populateThemeList(){
+	$.ajax("../../themes/themes.xml")
+	.done(function(data) {
+		var themes = new Array();
+		data = $(data);
+		data.find('theme').each(function(){
+			var theme = $.trim($(this).text()+"");
+			themes.push(theme);
+		});
+		var len = themes.length; var i;
+		for(i=0; i<len; i++){
+			var t = themes[i];
+			var t_inner = '';
+			var option_node = document.createElement('option');
+			if(t.indexOf('.css')<0){
+				option_node.value = './themes/'+t+'.css';
+				t_inner = t;
+			}else if(t.indexOf('.css')>=0 && t.indexOf('://')>=0){
+				option_node.value = t;
+				t_inner = t.split('/'); var t_len = t_inner.length-1;
+				t_inner = t_inner[t_len];
+				t_inner = t_inner.replace('.css', '');
+			}else if(t.indexOf('.css')>=0 && t.indexOf('://')<0){
+				option_node.value = './themes/'+t;
+				t_inner = t_inner.replace('.css', '');
+			}else{}
+			option_node.innerHTML = t_inner;
+			option_node.className = "xmpp webclient";
+			$('#xmpp_candy_style_select').append(option_node);
+			$('#xmpp_candy_style_select').val(0);
+		}
+	})
+	.fail(function() {
+		
+	})
+	.always(function() {
+		
+	});
+};
 function byId(id){
 	return document.getElementById(id);
-}
+};
 function makelink(){
 	var lang = encodeURIComponent(byId('xmpp_lang')[byId('xmpp_lang').selectedIndex].value);
 	var style_candy = encodeURIComponent(byId('xmpp_candy_style_select')[byId('xmpp_candy_style_select').selectedIndex].value);
@@ -46,7 +87,7 @@ function makelink(){
 	
 	byId('xmpp_link').value = link;
 	byId('xmpp_link').select();
-}
+};
 function removeWhitespace(str){
 	try{
 		str = str.replace(new RegExp(" ", 'g'), "");
@@ -54,4 +95,4 @@ function removeWhitespace(str){
 		str = null;
 	}
 	return str;
-}
+};

@@ -4,7 +4,7 @@ CandyExtend.Modules = (function(self, Candy, $) {
 	var originalOnMessage = Candy.Core.Event.Jabber.Room.Message;
 	var muc_service = "";
 	var aes_password = "";
-	self.init = function(muc, pass) {
+	self.init = function(muc, pass){
 		if(typeof pass == "string" || typeof pass == "String"){
 			aes_password = $.trim(pass);
 		}
@@ -42,14 +42,13 @@ CandyExtend.Modules = (function(self, Candy, $) {
 					if(dec.length < args.message.length){
 						dec = sjcl.decrypt(aes_password, args.message);
 					}
-					dec = self.sanitizeText(dec);
 					return dec;
 				}catch(e){
 					//return "[CHAT: Received a message that could not be decrypted. Probably sent from another client, or the sender is using a different encryption password.]";
 					return "";
 				}
 			}else{
-				return self.sanitizeText(args.message);
+				return args.message;
 			}
 		};
 		Candy.Core.Action.Jabber.Room.Join = function(room_jid, room_pass){
@@ -84,11 +83,6 @@ CandyExtend.Modules = (function(self, Candy, $) {
 				return true;
 			}
 		};
-	};
-	self.sanitizeText = function(txt){
-		txt = txt.replace(new RegExp('<', 'g'), '&lt;');
-		txt = txt.replace(new RegExp('>', 'g'), '&gt;');
-		return txt;
 	};
 	return self;
 }(CandyExtend.Modules|| {}, Candy, jQuery));

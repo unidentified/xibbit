@@ -99,7 +99,7 @@ self.processCommand = function(message){
 			var room_name = recv_nick;
 			Candy.View.Pane.PrivateRoom.open(room_jid, room_name, true, false);
 		}else{}
-	}else if(command=='/names'){
+	}else if(command=='/names') {
 		var room_jid = Candy.View.getCurrent().roomJid;
 		if(!(room_jid.indexOf('/')>0)){
 			var room_obj = Candy.Core.getRoom(room_jid);
@@ -126,9 +126,57 @@ self.processCommand = function(message){
 				}
 			}
 			Candy.View.Pane.Chat.infoMessage(room_jid, 'Users: ', room_roster_msg);
-		}else{
+		}
+		else{
 			// this is a private chat, no /names command
 		}
+	}else if(command=='/themes'){
+		$.ajax("./themes/themes.xml")
+		.done(function(data) {
+			var themes = new Array();
+			data = $(data);
+			data.find('theme').each(function(){
+				var theme = $.trim($(this).text()+"");
+				themes.push(theme);
+			});
+			themes = themes.join(' ');
+			var room_jid = Candy.View.getCurrent().roomJid;
+			Candy.View.Pane.Chat.infoMessage(room_jid, 'Themes: ', themes);
+		})
+		.fail(function() {
+			var room_jid = Candy.View.getCurrent().roomJid;
+			Candy.View.Pane.Chat.infoMessage(room_jid, 'Themes: ', '');
+		})
+		.always(function() {
+			
+		});
+	}else if(command=='/theme'){
+		var theme = message.split(' ')[1];
+		$.ajax("./themes/themes.xml")
+		.done(function(data) {
+			var themes = new Array();
+			data = $(data);
+			data.find('theme').each(function(){
+				var _theme = $.trim($(this).text()+"");
+				if(_theme==theme){
+					$('body').find('link[rel="stylesheet"]').each(function(){
+						if(theme.indexOf('.css')<0){
+							this.href='./themes/'+theme+'.css';
+						}else if(theme.indexOf('.css')>=0 && theme.indexOf('://')>=0){
+							this.href=theme;
+						}else if(theme.indexOf('.css')>=0 && theme.indexOf('://')<0){
+							this.href='./themes/'+theme;
+						}else{}
+					});
+				}
+			});
+		})
+		.fail(function() {
+			
+		})
+		.always(function() {
+			
+		});
 	}else{
 		CandyAdmin.Modules.processCommand(message);
 	}
