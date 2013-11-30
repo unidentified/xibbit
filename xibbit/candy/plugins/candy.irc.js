@@ -139,7 +139,7 @@ self.processCommand = function(message){
 				var theme = $.trim($(this).text()+"");
 				themes.push(theme);
 			});
-			themes = themes.join(' ');
+			themes = themes.join(', ');
 			var room_jid = Candy.View.getCurrent().roomJid;
 			Candy.View.Pane.Chat.infoMessage(room_jid, 'Themes: ', themes);
 		})
