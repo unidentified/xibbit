@@ -32,7 +32,7 @@ this.init.start = function(){
 		}
 		if(params.lang){
 			var lang = params.lang;
-			if(lang == "de"){
+			if(lang != "en"){
 				xmppWebclient.init.initWithLang(lang);
 				return;
 			}
@@ -52,17 +52,14 @@ this.init.initWithLang = function(lang){
 		var div_login = xmppWebclient.tools.xmlToString(data.getElementsByTagName('divlogin')[0]);
 		div_login = div_login.replace(new RegExp("</input>;", 'g'), "");
 		$('#xmpp_webclient_login_form').html(div_login);
-		
-		xmppWebclient.init.initDisplay();
-		xmppWebclient.init.getData();
-		xmppWebclient.init.initBindings();
-		
 	})
 	.fail(function(){
 		
 	})
 	.always(function(){
-		
+		xmppWebclient.init.initDisplay();
+		xmppWebclient.init.getData();
+		xmppWebclient.init.initBindings();
 	});
 };
 this.init.getData = function(){
@@ -70,6 +67,10 @@ this.init.getData = function(){
 	* GET LIST OF SUPPORTED XMPP SERVERS
 	* */
 	xmppWebclient.login.getServerList();
+	/*
+	 * GET LIST OF CANDY STYLES
+	 * */
+	xmppWebclient.login.getThemeList();
 };
 this.init.initDisplay = function(){
 	$('.xmpp.webclient.login.optional').css('display', 'none');
@@ -102,6 +103,7 @@ this.init.initBindings = function(){
 //---START-LOGIN--------------------------------------------------------
 this.login = new Object();
 this.login.xmppServers = new Array();
+this.login.candyThemes = new Array();
 this.login.xmppServer = function(host, bind, muc, anon){
 	return {"host": host, "bind": bind, "muc": muc, "anon": anon };
 };
@@ -154,6 +156,51 @@ this.login.populateServerList = function(){
 		option_node.className = "xmpp webclient login";
 		$('#xmpp_webclient_login_servers').append(option_node);
 		$('#xmpp_webclient_login_servers').val(0);
+	}
+	return;
+};
+this.login.getThemeList = function(){
+	$.ajax("./themes/themes.xml")
+	.done(function(data) {
+		var themes = new Array();
+		data = $(data);
+		data.find('theme').each(function(){
+			var theme = $.trim($(this).text()+"");
+			themes.push(theme);
+		});
+		xmppWebclient.login.candyThemes = themes;
+		xmppWebclient.login.populateThemeList();
+	})
+	.fail(function() {
+		
+	})
+	.always(function() {
+		
+	});
+};
+this.login.populateThemeList = function(){
+	var themes = xmppWebclient.login.candyThemes;
+	var len = themes.length; var i;
+	for(i=0; i<len; i++){
+		var t = themes[i];
+		var t_inner = '';
+		var option_node = document.createElement('option');
+		if(t.indexOf('.css')<0){
+			option_node.value = './themes/'+t+'.css';
+			t_inner = t;
+		}else if(t.indexOf('.css')>=0 && t.indexOf('://')>=0){
+			option_node.value = t;
+			t_inner = t.split('/'); var t_len = t_inner.length-1;
+			t_inner = t_inner[t_len];
+			t_inner = t_inner.replace('.css', '');
+		}else if(t.indexOf('.css')>=0 && t.indexOf('://')<0){
+			option_node.value = './themes/'+t;
+			t_inner = t_inner.replace('.css', '');
+		}else{}
+		option_node.innerHTML = t_inner;
+		option_node.className = "xmpp webclient login";
+		$('#xmpp_webclient_candy_style').append(option_node);
+		$('#xmpp_webclient_candy_style').val(0);
 	}
 	return;
 };

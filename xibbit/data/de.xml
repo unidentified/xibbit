@@ -27,8 +27,6 @@
 		<input class="xmpp webclient login" id="xmpp_webclient_login_encpass" value=""></input>
 		<label class="xmpp webclient login" for="xmpp_webclient_candy_style">Style:</label>
 		<select class="xmpp webclient login" id="xmpp_webclient_candy_style">
-			<option class="xmpp webclient login" value="./themes/light.css">light</option>
-			<option class="xmpp webclient login" value="./themes/dark.css">dark</option>
 		</select>
 		<button class="xmpp webclient login" id="xmpp_webclient_login_button">Verbinden</button>
 		<p class="xmpp webclient login notice">
