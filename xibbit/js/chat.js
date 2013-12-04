@@ -3,7 +3,7 @@ function chat_home(){
 
 //---START-INIT---------------------------------------------------------
 
-//console.log($('link[href="./candy/res/default.css"]').attr('href'));
+this.websiteLanguage = "en";
 
 this.params = null;
 
@@ -52,6 +52,7 @@ this.init.initWithLang = function(lang){
 		var div_login = xmppWebclient.tools.xmlToString(data.getElementsByTagName('divlogin')[0]);
 		div_login = div_login.replace(new RegExp("</input>;", 'g'), "");
 		$('#xmpp_webclient_login_form').html(div_login);
+		xmppWebclient.websiteLanguage = lang;
 	})
 	.fail(function(){
 		

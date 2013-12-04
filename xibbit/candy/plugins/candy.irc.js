@@ -177,6 +177,24 @@ self.processCommand = function(message){
 		.always(function() {
 			
 		});
+	}else if(command=='/help'){
+		var _type = (typeof xmppWebclient.websiteLanguage).toLowerCase();
+		if(_type == 'string'){
+			var room_jid = Candy.View.getCurrent().roomJid;
+			var _msg_href = '/pages/'+xmppWebclient.websiteLanguage+'/commands.html';
+			var location_url = (window.location.href).replace('/chat.html', '');
+			if(location_url.indexOf('?')>0){
+				location_url = location_url.split('?')[0];
+			}
+			if(location_url.indexOf('#')>0){
+				location_url = location_url.split('#')[0];
+			}
+			link = location_url + _msg_href;
+			link = '<a href="'+link+'" target="_blank">'+link+'</a>';
+			var _time = Candy.Util.localizedTime(new Date().toGMTString());
+			var _html = '<dt>'+_time+'</dt><dd class="infomessage">Commands: '+link+'</dd>';
+			Candy.View.Pane.Room.appendToMessagePane(room_jid, _html);
+		}
 	}else{
 		CandyAdmin.Modules.processCommand(message);
 	}

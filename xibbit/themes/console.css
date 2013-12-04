@@ -1,0 +1,312 @@
+*, input, button, select, submit {
+     font-family: Lucida Console,Monaco,Courier New,Liberation Mono,Free Mono,monospace ! important;
+}
+
+#candy {
+     background-color: #080A0B;
+     color: #DCDCDC;
+}
+
+a {
+     color: #DCDCDC;
+}
+
+#chat-tabs li {
+     border-right: 1px solid #686466;
+}
+
+#chat-tabs li a {
+     background-color: #080A0B;
+     color: #DCDCDC;
+     font-size: 15px;
+}
+
+#chat-tabs li.active a {
+     background-color: #080A0B;
+     color: #EFEFEF;
+}
+
+#chat-tabs li a.transition {
+     background: none repeat scroll 0px 0px #080A0B;
+}
+
+#chat-tabs li a.close {
+     background-color: transparent;
+     color: #FFFFFF;
+}
+
+#chat-tabs li.active a.transition {
+     background: none repeat scroll 0px 0px #080A0B;
+     color: #EFEFEF;
+}
+
+#chat-tabs li a.close:hover, #chat-tabs li.active a.close:hover {
+     color: #CCCCCC;
+}
+
+#chat-tabs li .unread {
+     background-color: #9B1414;
+     color: #FFFFFF;
+}
+
+#chat-tabs li.offline a.label {
+     text-decoration: line-through;
+}
+
+#chat-toolbar {
+     background-color: #060708;
+     border-top: 1px solid #AAAAAA;
+     color: #666666;
+     width: 200px;
+}
+
+#chat-toolbar .context {
+     background-image: url("img/action/settings.png");
+     display: none;
+}
+
+#chat-autoscroll-control {
+     background-image: url("img/action/autoscroll-off.png");
+}
+
+#chat-autoscroll-control.checked {
+     background-image: url("img/action/autoscroll-on.png");
+}
+
+#chat-statusmessage-control {
+     background: url("img/action/statusmessage-off.png") repeat scroll 0px 0px transparent;
+}
+
+#chat-statusmessage-control.checked {
+     background: url("img/action/statusmessage-on.png") repeat scroll 0px 0px transparent;
+}
+
+#chat-toolbar .usercount {
+     background-image: url("img/action/usercount.png");
+}
+
+.usercount span {
+     background-color: #CCCCCC;
+}
+
+.roster-pane .user {
+     background-color: #0C0E0F;
+     color: #FFFFFF;
+}
+
+.roster-pane .user:hover {
+     background-color: #101314;
+}
+
+.roster-pane .user.me:hover {
+     background-color: #101314;
+}
+
+.roster-pane li.role-moderator {
+     background-image: url("img/roster/role-moderator.png");
+     display: block;
+}
+
+.roster-pane li.affiliation-owner {
+     background-image: url("img/roster/affiliation-owner.png");
+     display: block;
+}
+
+.roster-pane li.ignore {
+     background-image: url("img/roster/ignore.png");
+}
+
+.roster-pane li.context {
+     background-image: url("img/action/menu.png");
+}
+
+.roster-pane li.context:hover {
+     background-color: #CCCCCC;
+}
+
+.message-pane-wrapper {
+     background: none repeat scroll 0px 0px #080A0B;
+}
+
+.message-pane dd {
+     font-size: 15px;
+}
+
+.message-pane dd span a {
+     font-size: 13px;
+}
+
+.message-pane dt {
+     color: #888888;
+     padding-top: 6px;
+     width: 55px;
+}
+
+.message-pane .subject {
+     color: #AA0000;
+}
+
+.message-pane .adminmessage {
+     color: #AA0000;
+}
+
+.message-pane .infomessage {
+     color: #888888;
+}
+
+.message-form-wrapper {
+     background-color: #080A0B;
+     border-top: 1px solid #CCCCCC;
+}
+
+.message-form input {
+     background-color: #080A0B;
+     color: #FFFFFF;
+}
+
+.message-form input.submit {
+     background-color: #101314;
+     color: #999999;
+}
+
+#tooltip {
+     background: url("img/tooltip-arrows.gif") no-repeat scroll left bottom transparent;
+     color: #FFFFFF;
+}
+
+#tooltip div {
+     background-color: #000000;
+}
+
+#context-menu {
+     background: url("img/context-arrows.gif") no-repeat scroll left bottom transparent;
+}
+
+#context-menu ul {
+     background-color: #000000;
+     color: #FFFFFF;
+}
+
+#context-menu li:hover {
+     background-color: #666666;
+}
+
+#context-menu .private {
+     background-image: url("img/action/private.png");
+}
+
+#context-menu .ignore {
+     background-image: url("img/action/ignore.png");
+}
+
+#context-menu .unignore {
+     background-image: url("img/action/unignore.png");
+}
+
+#context-menu .kick {
+     background-image: url("img/action/kick.png");
+}
+
+#context-menu .ban {
+     background-image: url("img/action/ban.png");
+}
+
+#context-menu .subject {
+     background-image: url("img/action/subject.png");
+}
+
+#context-menu .emoticons:hover {
+     background-color: transparent;
+}
+
+#chat-modal {
+     background: url("img/modal-bg.png") repeat scroll 0px 0px transparent;
+     color: #FFFFFF;
+}
+
+#chat-modal-overlay {
+     background-image: url("img/overlay.png");
+}
+
+#chat-modal .close {
+     color: #FFFFFF;
+}
+
+#chat-modal .close:hover {
+     background-color: #333333;
+}
+
+div.muc_room_configuration {
+     background-color: #333333;
+     color: #FFFFFF;
+}
+
+h1.muc_room_configuration {
+    
+}
+
+ul.muc_room_configuration ul {
+    
+}
+
+li.muc_room_configuration li {
+    
+}
+
+span.muc_room_configuration span {
+    
+}
+
+input.muc_room_configuration[type="text"] {
+    
+}
+
+input.muc_room_configuration[type="button"] {
+    
+}
+
+input.muc_room_configuration[type="button"] {
+    
+}
+
+.roster-pane {
+     display: none;
+}
+
+.message-pane-wrapper {
+     margin: 30px 0px 32px;
+}
+
+.message-form {
+     margin-right: 0px ! important;
+}
+
+.message-form-wrapper {
+     margin-right: 0px ! important;
+}
+
+.message-form .submit {
+     display: inline-block;
+     float: right ! important;
+     margin-right: 0px ! important;
+     position: relative;
+     right: 0px ! important;
+     width: 60px;
+}
+
+.message-form .field {
+     bottom: 0px;
+     left: 2px;
+     margin-right: 100px ! important;
+     position: relative;
+     right: 75px;
+     width: 75%;
+}
+
+#chat-toolbar {
+     display: none ! important;
+}
+
+#chat-tabs {
+     margin: 0px;
+}

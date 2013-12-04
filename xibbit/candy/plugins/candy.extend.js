@@ -4,7 +4,7 @@ CandyExtend.Modules = (function(self, Candy, $) {
 	var originalOnMessage = Candy.Core.Event.Jabber.Room.Message;
 	var muc_service = "";
 	var aes_password = "";
-	self.init = function(muc, pass){
+	self.init = function(muc, pass) {
 		if(typeof pass == "string" || typeof pass == "String"){
 			aes_password = $.trim(pass);
 		}
@@ -20,12 +20,13 @@ CandyExtend.Modules = (function(self, Candy, $) {
 		Candy.View.Event.Message.beforeSend = function(message){
 			$('input[name="message"]').attr('maxlength', '256'); // horrible way of assigning a new maxlength...
 			var msg = ($.trim(message));
-			var is_command = msg.indexOf('/') == 0;
+			var is_command = (msg.indexOf('/') == 0) && (msg.indexOf('/me ') !== 0);
 			if(is_command){
 				msg = msg.replace(/\s+/g, ' ');
 				CandyIRC.Modules.processCommand(msg);
 				return "";
 			}else{
+				message = self.parseTagsBeforeSend(message);
 				if(aes_password.length>0){
 					message = sjcl.encrypt(aes_password, message, {"mode": "ocb2", "ks": 256, "ts": 128, "iter": 1000});
 				}
@@ -42,13 +43,16 @@ CandyExtend.Modules = (function(self, Candy, $) {
 					if(dec.length < args.message.length){
 						dec = sjcl.decrypt(aes_password, args.message);
 					}
+					dec = self.parseMessage(dec);
 					return dec;
 				}catch(e){
 					//return "[CHAT: Received a message that could not be decrypted. Probably sent from another client, or the sender is using a different encryption password.]";
 					return "";
 				}
 			}else{
-				return args.message;
+				var _msg = args.message;
+				_msg = self.parseMessage(_msg);
+				return _msg;
 			}
 		};
 		Candy.Core.Action.Jabber.Room.Join = function(room_jid, room_pass){
@@ -84,5 +88,58 @@ CandyExtend.Modules = (function(self, Candy, $) {
 			}
 		};
 	};
+	self.parseTagsBeforeSend = function(str){
+		str = str.replaceAll('<', '&lt;');
+		str = str.replaceAll('>', '&gt;');
+		return str;
+	};
+	self.sanitizeMessage = function(str){
+		str = str.replace(/(<([^>]+)>)/ig,"");
+		str = str.replaceAll('&amp;lt;', '&lt;');
+		str = str.replaceAll('&amp;gt;', '&gt;');
+		str = str.replaceAll('<', '&lt;');
+		str = str.replaceAll('>', '&gt;');
+		return str;
+	};
+	self.parseURL = function(str){
+		var str_arr = str.split(' ');
+		var len = str_arr.length;
+		for(var i=0; i<len; i++) {
+			var s = str_arr[i];
+			if(s.indexOf('http://')==0){
+				s = '<a style="text-decoration: underline;" href="'+s+'" target="_blank">'+s+'</a>';
+			}else if(s.indexOf('https://')==0){
+				s = '<a style="text-decoration: underline;" href="'+s+'" target="_blank">'+s+'</a>';
+			}else if(s.indexOf('ftp://')==0){
+				s = '<a style="text-decoration: underline;" href="'+s+'" target="_blank">'+s+'</a>';
+			}else if(s.indexOf('file://')==0){
+				s = '<a style="text-decoration: underline;" href="'+s+'" target="_blank">'+s+'</a>';
+			}
+			else{}
+			str_arr[i] = s;
+		}
+		str = str_arr.join(' ');
+		return str;
+	};
+	self.parseMe = function(str){
+		if($.trim(str).indexOf('/me ')==0){
+			str = str.replace('/me ', '');
+			str = '<em style="font-style: italic;">'+str+'</em>';
+			return str;
+		}else{
+			return str;
+		}
+	};
+	self.parseMessage = function(str){
+		str = self.sanitizeMessage(str);
+		str = self.parseURL(str);
+		str = self.parseMe(str);
+		return str;
+	};
 	return self;
 }(CandyExtend.Modules|| {}, Candy, jQuery));
+
+String.prototype.replaceAll = function(find, replace){
+	var str = this;
+	return str.replace(new RegExp(find, 'g'), replace);
+};
