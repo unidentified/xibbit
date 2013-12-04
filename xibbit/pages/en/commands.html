@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<title>Commands Overview</title>
 		<link rel="stylesheet" type="text/css" href="../../css/default.css">
 	</head>
@@ -74,6 +75,20 @@
 				<br>
 				Load a theme. List themes with <code class="xmpp webclient">/themes</code>.
 			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/me [message]</code></strong>
+				<br>
+				Is shown as "{your username} message" and your message is in italics. 
+				<br>
+				Example: <code class="xmpp webclient">/me is away for a while</code>
+				<br>
+				If your username is user1, this is shown as "user1 <em class="xmpp webclient" style="font-style: italic">is away for a while</em>".
+			</p>
+			<p class="xmpp webclient">
+				<strong class="xmpp webclient"><code class="xmpp webclient">/help</code></strong>
+				<br>
+				Prints out an URL to the command file.
+			</p>
 			<h2 class="xmpp webclient" id="commands_admin">Administrative commands</h2>
 			<p class="xmpp webclient">
 				Please note: Refer to the <a class="xmpp webclient" target="_blank" href="./xmpp.html">
@@ -102,7 +117,7 @@
 				to moderator, i.e. user2 is moderator as long as in room now).
 			</p>
 			<p class="xmpp webclient">
-				<strong class="xmpp webclient"><code class="xmpp webclient">/list [owner | admin | member | none | outcast | moderator | participant]</code></strong>
+				<strong class="xmpp webclient"><code class="xmpp webclient">/list [owner | admin | member | outcast | moderator | participant]</code></strong>
 				<br>
 				List the users with a certain affiliation or role. 
 				<br>
@@ -115,9 +130,8 @@
 				Example 3: <code class="xmpp webclient">/list moderator</code> (list all
 				users with moderator role, i.e. all owners, admins and temporary moderators 
 				<strong class="xmpp webclient">present</strong> in the current room).
-				Example 4: <code class="xmpp webclient">/list none</code> (lists all
-				users with no special affiliation to the room which are still present, i.e. the
-				currently present normal users who are not member).
+				Example 4: <code class="xmpp webclient">/list participant</code> (lists all
+				users that do not have a moderator role and are present in the room).
 			</p>
 			<p class="xmpp webclient">
 				<strong class="xmpp webclient"><code class="xmpp webclient">/ban {user}</code></strong>

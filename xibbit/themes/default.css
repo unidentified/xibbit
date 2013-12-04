@@ -202,7 +202,7 @@ ul {
      cursor: pointer;
      display: none;
      font-size: 12px;
-     height: 15px;
+     height: 0.94em;
      margin: 0px 4px 2px;
      opacity: 0;
      padding: 4px 7px;
@@ -284,7 +284,7 @@ ul {
      background-color: white;
      bottom: 0px;
      clear: both;
-     font-size: 13px;
+     font-size: 0.813em;
      height: auto;
      left: 0px;
      margin: 30px 200px 32px 0px;
@@ -349,9 +349,9 @@ ul {
 }
 
 .message-pane .emoticon {
-     height: 15px;
+     height: 0.94em;
      vertical-align: text-bottom;
-     width: 15px;
+     width: 0.94em;
 }
 
 .message-form-wrapper {
@@ -380,7 +380,7 @@ ul {
      border: 0px none;
      color: black;
      display: block;
-     font-size: 14px;
+     font-size: 0.875em;
      outline-width: 0px;
      padding: 5px 10px;
      width: 100%;
@@ -423,7 +423,7 @@ ul {
      background: url("img/context-arrows.gif") no-repeat scroll left bottom transparent;
      display: none;
      margin: 8px -28px -8px -12px;
-     padding: 15px 10px;
+     padding: 0.94em 10px;
      position: absolute;
      z-index: 10;
 }
@@ -488,9 +488,9 @@ ul {
 
 #context-menu .emoticons img {
      cursor: pointer;
-     height: 15px;
+     height: 0.94em;
      margin: 3px;
-     width: 15px;
+     width: 0.94em;
 }
 
 #chat-modal {
@@ -527,11 +527,11 @@ ul {
 
 #chat-modal-spinner {
      display: none;
-     margin-left: 15px;
+     margin-left: 0.94em;
 }
 
 #chat-modal form {
-     margin: 15px 0px;
+     margin: 0.94em 0px;
 }
 
 #chat-modal label, #chat-modal input, #chat-modal select {
@@ -582,7 +582,7 @@ ul {
 div.muc_room_configuration {
      display: none;
      font-family: Arial,Helvetica,sans-serif;
-     font-size: 14px;
+     font-size: 0.875em;
      font-weight: normal;
      padding: 20px;
 }
@@ -619,7 +619,7 @@ input.muc_room_configuration[type="button"] {
      width: 20%;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 600px), (max-width: 40em) {
   .roster-pane { display: none; }
   .message-pane-wrapper { margin: 30px 0px 32px; }
   .message-form { margin-right: 0px ! important; }
