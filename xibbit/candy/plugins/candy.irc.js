@@ -190,7 +190,10 @@ self.processCommand = function(message){
 				location_url = location_url.split('#')[0];
 			}
 			link = location_url + _msg_href;
-			Candy.View.Pane.Chat.infoMessage(room_jid, 'Commands: ', link);
+			link = '<a href="'+link+'" target="_blank">'+link+'</a>';
+			var _time = Candy.Util.localizedTime(new Date().toGMTString());
+			var _html = '<dt>'+_time+'</dt><dd class="infomessage">Commands: '+link+'</dd>';
+			Candy.View.Pane.Room.appendToMessagePane(room_jid, _html);
 		}
 	}else{
 		CandyAdmin.Modules.processCommand(message);
