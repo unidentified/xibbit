@@ -177,6 +177,21 @@ self.processCommand = function(message){
 		.always(function() {
 			
 		});
+	}else if(command=='/help'){
+		var _type = (typeof xmppWebclient.websiteLanguage).toLowerCase();
+		if(_type == 'string'){
+			var room_jid = Candy.View.getCurrent().roomJid;
+			var _msg_href = '/pages/'+xmppWebclient.websiteLanguage+'/commands.html';
+			var location_url = (window.location.href).replace('/chat.html', '');
+			if(location_url.indexOf('?')>0){
+				location_url = location_url.split('?')[0];
+			}
+			if(location_url.indexOf('#')>0){
+				location_url = location_url.split('#')[0];
+			}
+			link = location_url + _msg_href;
+			Candy.View.Pane.Chat.infoMessage(room_jid, 'Commands: ', link);
+		}
 	}else{
 		CandyAdmin.Modules.processCommand(message);
 	}
