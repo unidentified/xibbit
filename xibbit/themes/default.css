@@ -284,7 +284,7 @@ ul {
      background-color: white;
      bottom: 0px;
      clear: both;
-     font-size: 0.813em;
+     font-size: 13px;
      height: auto;
      left: 0px;
      margin: 30px 200px 32px 0px;
@@ -349,9 +349,9 @@ ul {
 }
 
 .message-pane .emoticon {
-     height: 0.94em;
+     height: 15px;
      vertical-align: text-bottom;
-     width: 0.94em;
+     width: 15px;
 }
 
 .message-form-wrapper {
@@ -380,7 +380,7 @@ ul {
      border: 0px none;
      color: black;
      display: block;
-     font-size: 0.875em;
+     font-size: 14px;
      outline-width: 0px;
      padding: 5px 10px;
      width: 100%;
@@ -423,7 +423,7 @@ ul {
      background: url("img/context-arrows.gif") no-repeat scroll left bottom transparent;
      display: none;
      margin: 8px -28px -8px -12px;
-     padding: 0.94em 10px;
+     padding: 15px 10px;
      position: absolute;
      z-index: 10;
 }
@@ -488,9 +488,9 @@ ul {
 
 #context-menu .emoticons img {
      cursor: pointer;
-     height: 0.94em;
+     height: 15px;
      margin: 3px;
-     width: 0.94em;
+     width: 15px;
 }
 
 #chat-modal {
@@ -527,11 +527,11 @@ ul {
 
 #chat-modal-spinner {
      display: none;
-     margin-left: 0.94em;
+     margin-left: 15px;
 }
 
 #chat-modal form {
-     margin: 0.94em 0px;
+     margin: 15px 0px;
 }
 
 #chat-modal label, #chat-modal input, #chat-modal select {
@@ -550,7 +550,7 @@ ul {
 
 #chat-modal label {
      clear: both;
-     padding-right: 1em;
+     padding-right: 16px;
      text-align: right;
      width: 100px;
 }
@@ -582,7 +582,7 @@ ul {
 div.muc_room_configuration {
      display: none;
      font-family: Arial,Helvetica,sans-serif;
-     font-size: 0.875em;
+     font-size: 14px;
      font-weight: normal;
      padding: 20px;
 }
@@ -619,13 +619,20 @@ input.muc_room_configuration[type="button"] {
      width: 20%;
 }
 
-@media all and (max-width: 600px), (max-width: 40em) {
-  .roster-pane { display: none; }
-  .message-pane-wrapper { margin: 30px 0px 32px; }
-  .message-form { margin-right: 0px ! important; }
-  .message-form-wrapper { margin-right: 0px ! important; }
-  .message-form .submit { margin-right: 0px ! important; right: 0px ! important; float: right ! important; display: inline-block; position: relative; width: 60px; }
-  .message-form .field { width: 75%; margin-right: 100px ! important; bottom: 0px; left: 2px; right: 75px; position: relative; }
-  #chat-toolbar { display: none ! important; }
-  #chat-tabs { margin: 0px; }
+@media all and (max-width: 600px), (-webkit-min-device-pixel-ratio: 2) {
+
+	.roster-pane { display: none; }
+	.message-pane-wrapper { margin: 30px 0px 32px; }
+	.message-form { margin-right: 0px ! important; }
+	.message-form-wrapper { margin-right: 0px ! important; }
+	.message-form .submit { margin-right: 0px ! important; right: 0px ! important; float: right ! important; display: inline-block; position: relative; width: 60px; }
+	.message-form .field { width: 75%; margin-right: 100px ! important; bottom: 0px; left: 2px; right: 75px; position: relative; }
+	#chat-toolbar { display: none ! important; }
+	#chat-tabs { margin: 0px; }
+	
+	.message-pane-wrapper { font-size: 90%; }
+	.message-pane dt { display: none; }
+	.message-form input { font-size: 97%; }
+	.message-form input.submit { font-size: 83%; }
 }
+

@@ -28,6 +28,12 @@ this.init.start = function(){
 		}
 		if(params.host){
 			xmppWebclient.login.connect(params);
+				if(params.lang){
+				var lang = params.lang;
+				if(lang != "en"){
+					xmppWebclient.init.initWithLang(lang);
+				}
+			}
 			return;
 		}
 		if(params.lang){
